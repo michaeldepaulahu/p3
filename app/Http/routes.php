@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/home', function () {
 	return view('home');
 });
+
+// profile
+Route::get('/profile', 'ProfileController');
