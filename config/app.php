@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://p3.dev',
 
     /*
     |--------------------------------------------------------------------------
@@ -140,11 +140,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-
+        Developerbf\Providers\AppServiceProvider::class,
+        Developerbf\Providers\AuthServiceProvider::class,
+        Developerbf\Providers\EventServiceProvider::class,
+        Developerbf\Providers\RouteServiceProvider::class,
+		Collective\Html\HtmlServiceProvider::class,	
     ],
 
     /*
@@ -193,6 +193,9 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'Html'      => Collective\Html\HtmlFacade::class,	
+        'Form'      => Collective\Html\FormFacade::class,			
+		'Xkcd'      => Developerbf\lib\Xkcd::class,
 
     ],
 

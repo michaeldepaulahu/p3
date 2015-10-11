@@ -21,5 +21,15 @@ Route::get('/home', function () {
 	return view('home');
 });
 
-// profile
-Route::get('/profile', 'ProfileController');
+//show profile
+Route::get('/profile', 'ProfileController@showProfile');
+
+// Loading xkcd within Laravel Framework
+Route::any('/xkcd', function(){
+	$custom = new Xkcd('words');
+	$custom->session('nW', 'words'); 
+	return View::make('p2', array(
+         'status' => $custom->word_status,
+         'display' => $custom->display()
+    ));	
+}); 

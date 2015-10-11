@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5c6026b96e6fa11a641b51a6ba976f5e",
+    "hash": "bdbcde333c74e1c4ad01c8af0c985b49",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -488,6 +488,56 @@
                 "laravel"
             ],
             "time": "2015-10-01 18:32:48"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "v5.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "8b7c357e78b8fb6a2e48377cf2441441aac6dd1e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/8b7c357e78b8fb6a2e48377cf2441441aac6dd1e",
+                "reference": "8b7c357e78b8fb6a2e48377cf2441441aac6dd1e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.1.*",
+                "illuminate/routing": "5.1.*",
+                "illuminate/session": "5.1.*",
+                "illuminate/support": "5.1.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "time": "2015-09-03 17:16:48"
         },
         {
             "name": "league/flysystem",
@@ -2732,16 +2782,16 @@
         },
         {
             "name": "sebastian/global-state",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/global-state.git",
-                "reference": "c7428acdb62ece0a45e6306f1ae85e1c05b09c01"
+                "reference": "23af31f402993cfd94e99cbc4b782e9a78eb0e97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/c7428acdb62ece0a45e6306f1ae85e1c05b09c01",
-                "reference": "c7428acdb62ece0a45e6306f1ae85e1c05b09c01",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/23af31f402993cfd94e99cbc4b782e9a78eb0e97",
+                "reference": "23af31f402993cfd94e99cbc4b782e9a78eb0e97",
                 "shasum": ""
             },
             "require": {
@@ -2779,7 +2829,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2014-10-06 09:23:50"
+            "time": "2015-06-21 15:11:22"
         },
         {
             "name": "sebastian/recursion-context",
