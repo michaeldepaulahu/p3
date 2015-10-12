@@ -3,6 +3,118 @@
  * author: michael depaula
  * custom css style css
 */
-body{
-	background-image:url(http://static5.depositphotos.com/1037262/520/i/950/depositphotos_5203848-Urban-Doom.jpg);
+
+@media (min-width: 992px) {
+
+}
+.title{
+	font-family: 'Special Elite', cursive;
+	font-size:48px;
+}
+.generate{
+	font-family: 'Shadows Into Light Two', cursive;
+	font-size:48px;
+	color:#FFFFFF;
+	margin: 0 auto; 
+    white-space: pre-wrap;        
+    white-space: -moz-pre-wrap;    
+    white-space: -pre-wrap;      
+    white-space: -o-pre-wrap;      
+    word-wrap: break-word;
+	width:80%; 
+}
+.thumb1{
+  height:100px;
+ }
+  
+.thumb2{
+  height:607px;
+  line-height:30px;
+  padding-top:10px;
+  margin: 0 30px 30px 30px; 
+}
+.thumb2-main{
+	background:url(../img/main-bg.jpg) top no-repeat;
+	position:relative;
+	overflow:hidden;
+	margin: 0 0 30px;
+	padding: 30px 0 80px;	
+}
+.main{
+	background:url(../img/main.jpg) top no-repeat;
+	position:relative;
+	overflow:hidden;
+	margin: 0 0 30px;
+	padding:100px 0 80px;
+}
+#words-group, #words-group1{
+	margin-bottom:0; 	
+}
+.form-inline .form-control{
+	width:40px;	
+}
+.symbols{
+	width:40px;	
+}
+.animate{
+	color:#5C941B; 
+	font-size:16px;
+	margin: 0 auto;
+}
+.status{
+	color:#3a8240; 
+}
+.status_info{
+	margin: 0 auto;
+	margin-top: 4px; 
+}
+footer{
+	font-family: 'Special Elite', cursive;
+	font-size:14px;
+	background:#F0F0F0;
+	padding:30px;
+	color:#0B2329;
+	background-image:url(../img/footer_bg.png);
+	background-repeat:repeat-x;
+}
+.form-mobile{
+	padding: 0 40px 0 40px;	
+}
+.navbar-header{
+	padding: 0 20px 0 20px; 	
+}
+
+.fa-3x{
+	font-size:3em;	
+	color:#FDFDFD;
+	text-shadow: 2px 2px #090909;
+	padding: 10px 0 10px 0; 	
+    -webkit-transition: font-size 0.5s, color 0.5s, text-shadow 0.5s;
+    transition: font-size 0.5s, color 0.5s, text-shadow 0.5s; 	
+}
+.fa:hover {
+    font-size: 4em;
+	color:#63a4f9;
+	text-shadow: 8px 8px #090909;
+
+}
+.nav-fa{
+	background-image:url(../img/fa-nav-bg.png);
+	height:750px;
+	width:190px;
+	margin:auto 0;
+	text-align:center;
+}
+
+.nav-menu{
+	height:750px;
+	width:190px;
+	margin:auto 0;
+	text-align:center;
+	background-color:#FFFFFF;
+}
+.nav-title{
+	font: 18px calibri, arial, "Times New Roman", serif;
+	color:#fefefe;
+	text-transform:uppercase;
 }

@@ -13,7 +13,7 @@
 <link href='https://fonts.googleapis.com/css?family=Special+Elite|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
 <!--JS-->
 <script src="{{ asset('js/jquery-1.11.3.min.js') }} "></script>
-<script src="{{ asset('js/custom.js') }} "></script>
+<script src="{{ asset('js/p2-custom.js') }} "></script>
 </head>
 <body>
     <div class="container-fluid">     
