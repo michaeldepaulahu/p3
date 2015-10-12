@@ -21,6 +21,9 @@ Route::get('/home', function () {
 	return view('home');
 });
 
+// show ipsum generator
+Route::any('/generator', 'GeneratorController@showGenerator');
+
 //show profile
 Route::get('/profile', 'ProfileController@showProfile');
 
