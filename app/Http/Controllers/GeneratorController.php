@@ -9,6 +9,15 @@ use Badcow\LoremIpsum\Generator;
 
 class GeneratorController extends Controller
 {
+
+	public function getShow() {
+		return view('generate.show');
+	}
+	
+   /// public function showGenerator() {
+	//	return view('generate.show')->with('generate', new GeneratorController);			
+    //}		
+
     // 
 	public function showGenerator(Request $request)
 	{
@@ -16,10 +25,11 @@ class GeneratorController extends Controller
 		if ($request->has('text')) {
     		$paragraph= $request->input('text');
 			$text= $generator->getParagraphs($paragraph);
-			$formatted = implode('<p>', $text); 
-			return $formatted;
-		}	
-		//View::make('home')->with('paragraph',$formatted); 
+			return view('generate.show')->with('paragraph', $text);
+		}else
+		{
+			return view('generate.show')->with('paragraph', NULL);;
+		}
 	}
 		
 }

@@ -23,6 +23,8 @@ Route::get('/home', function () {
 
 // show ipsum generator
 Route::any('/generator', 'GeneratorController@showGenerator');
+//Route::any('/generator', 'GeneratorController@getShow');
+
 
 //show profile
 Route::get('/profile', 'ProfileController@showProfile');

@@ -4,8 +4,26 @@
  * Custom js
  */
  
+	// TEXT GENERATOR
+	// input checks
+ 	function getID()
+	{
+		$("#text").keyup(function(){
+			if( $("#text").val() == 0 ) 
+			{
+					document.getElementById('generate').disabled = true;
+					document.getElementById('view').disabled = true;
+			}
+			else
+			{
+					document.getElementById('generate').disabled = false;
+					document.getElementById('view').disabled = false;			
+			}
+		});
+	}
 
- 
+
+
  	function toggle(sel){
 		// selectors
 		var p = sel + " p:eq(1)";
@@ -70,6 +88,17 @@
  // load custom
 	$(document).ready(function(){
 
+	// input check
+	getID();
+	
+	// select all function
+	$("#copy").click(function(){
+		var text = document.getElementById("paragraph");
+		text.select();
+		alert('Do not forget to copy with Ctrl+C (Win), Command+C (Mac)');
+	});		
+
+	
 		// load custom
 		
 		// validate word input
