@@ -192,10 +192,15 @@ ul.cp{
 	color:#10225A;	
 }
 
-#paragraph{
+#paragraph, #paragraph1{
 	background: transparent; 
 	width:100%; 
 	height:650px; 
 	overflow:scroll; 
 	border:0;"
+}
+
+.form-control, .label-control, .btn{
+ 	margin: 3px 0 5px 0;
+
 }

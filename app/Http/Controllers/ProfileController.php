@@ -42,7 +42,9 @@ class ProfileController extends Controller
 	
 	public function postProfile(Request $request) {
  	   $text = $request->input('text');
-	   return view('profile')->with('profile', new ProfileController)->with('text', $text);	
+	   $type = $request->input('type');
+	   $post = array($text, $type); 
+	   return view('profile')->with('profile', new ProfileController)->with('post', $post);	
 	   //return 'Process adding new book: '.$title;
 	}	
 	
@@ -87,7 +89,7 @@ class ProfileController extends Controller
 				'salt' => $salt, 
 				'password' => $xkcd, 
 				'hash' => $hash,
-				'img' => str_replace(" ","%20",$this->track_name[$i]),
+				'img' => str_replace(" ","%20",$this->track_name[$i].".jpg"),
 				'user' => str_replace(" ","",$this->track_name[$i])			
 			);
 
@@ -193,17 +195,17 @@ class ProfileController extends Controller
 	{
 		
 		foreach ($this->track as $value) {
-   			echo $value['id']  . "\n\n";
-			echo $value['name']  . "\n\n";
-			echo $value['birthday'] . "\n\n";
-			echo $value['email'] . "\n\n";
-			echo $value['salt'] . "\n\n";
-			echo $value['password'] . "\n\n";
-			echo $value['hash'] . "\n\n";
-			echo $value['img'] . "\n\n";
-			echo $value['user'] . "\n\n";
+   			echo $value['id']  . "\n";
+			echo $value['email'] . "\n";			
+			echo $value['birthday'] . "\n";
+			echo $value['name']  . "\n";
+			echo $value['user'] . "\n";
+			echo $value['password'] . "\n";
+			echo $value['salt'] . "\n";
+			echo $value['hash'] . "\n";
+			echo $value['img'] . "\n";
+			echo "\n\n";
 		}	
-		
 	}
 	
 	/**

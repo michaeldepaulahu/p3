@@ -24,8 +24,8 @@
 
 @section('nav-menu')
 
-    @if(isset($text))
-        {{ $profile->showRandom($text) }}
+    @if(isset($post))
+        {{ $profile->showRandom($post[0]) }}
     @else
         {{ $profile->showRandom(1) }}
     @endif
@@ -35,10 +35,12 @@
         <form action="/profile" method="post">	
             <div class="form-group text-left">
                 <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-                <label>Enter the number of user profiles to generate:</label>
-                <input id="text" type="text" class="form-control" name="text" placeholder="number of users" value="{{ $_POST['text'] or 1 }}"><br>															        	
-                <button id="generate" type="submit" class="btn btn-default">Generate</button>
-                <button id="view" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View All</button>
+                <label class="label-control">1. Enter the number of user profiles to generate and click the Generate button:</label>
+                <input id="text" type="text" class="form-control" name="text" placeholder="number of users" value="{{ $_POST['text'] or 1 }}"><br>      	
+                <button id="generate" type="submit" class="btn btn-default">Generate</button><br>
+                 <label class="label-control">3. Click below to view the formatted data:</label>                 
+                <button id="viewDeft" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View All</button>
+                <button id="viewJson" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View JSON</button>
             </div>
         </form>
     </div>
@@ -50,10 +52,14 @@
             <div class="modal-header">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="button" id="copy" class="btn btn-primary">Select All</button>
+                <button type="button" id="copy1" class="btn btn-primary">Select All</button>
             </div>
-            <div class="modal-body">
-                <textarea  id="paragraph" rows="4" cols="50" readonly>{{ $profile->displayJSON() }}</textarea>
+            <div id="modal-body" class="modal-body">
+                <textarea  id="paragraph" rows="4" cols="50" readonly><?php  $profile->display(); ?></textarea>
             </div>
+            <div id="modal-body1" class="modal-body">
+                <textarea  id="paragraph1" rows="4" cols="50" readonly><?php  $profile->displayJSON(); ?></textarea>
+            </div>            
         </div>
     </div>
 </div> 
@@ -65,7 +71,7 @@
 @section('nav-slave')
 
 <div class="text-center" style="font-size:12px;"> 
-	<img class="img-profile" src="{{ asset("img/" . $profile->track[0]['img']  . ".jpg") }}" alt=""/><br>
+	<img class="img-profile" src="{{ asset("img/" . $profile->track[0]['img']) }}" alt=""/><br>
     <div class="profile_title">{{ $profile->track[0]['name'] }}</div> <br>    
     <div class="list-group text-left">
         <a class="list-group-item list-group-item-info text-center">
@@ -77,7 +83,8 @@
         <a  class="list-group-item"><strong class="field">Username: </strong>{{ $profile->track[0]['user'] }}</a>
         <a  class="list-group-item"><strong class="field">Password: </strong>{{ $profile->track[0]['password'] }}</a>
         <a  class="list-group-item"><strong class="field">Salt: </strong>{{ $profile->track[0]['salt'] }}</a>     
-        <a  class="list-group-item"><strong class="field">Hash: </strong>{{ $profile->track[0]['hash'] }}</a>                
+        <a  class="list-group-item"><strong class="field">Hash: </strong>{{ $profile->track[0]['hash'] }}</a> 
+        <a  class="list-group-item"><strong class="field">Hash: </strong>{{ $profile->track[0]['img'] }}</a>                        
 	</div>
  	
 </div> 
