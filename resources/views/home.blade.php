@@ -45,7 +45,7 @@
     <h1 class="intro">Boost Productivity and Build like a Pro.</h1>
     <p class="lead">Speed-up the development of your website with the Best Friend Developer tools.</p>
     <p>
-        <img src="{{ asset('img/video.jpg') }}" width="620" height="315" alt=""/> 
+        <img src="{{ asset('img/video.jpg') }}" width="620" height="290" alt=""/> 
     </p>
   </div>  
 @stop

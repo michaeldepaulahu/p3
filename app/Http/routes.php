@@ -28,6 +28,7 @@ Route::any('/generator', 'GeneratorController@showGenerator');
 
 //show profile
 Route::get('/profile', 'ProfileController@showProfile');
+Route::post('/profile', 'ProfileController@postProfile');
 
 // Loading xkcd within Laravel Framework
 Route::any('/xkcd', 'XkcdController@showXkcd');

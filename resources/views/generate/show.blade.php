@@ -47,7 +47,7 @@
                 <button type="button" id="copy" class="btn btn-primary">Select All</button>
             </div>
             <div class="modal-body">
-                <textarea  id="paragraph" rows="4" cols="50" style="background: transparent; width:100%; height:650px; overflow:scroll; border:0;" readonly>
+                <textarea  id="paragraph" rows="4" cols="50" readonly>
                 <?php 
 				if(is_array($paragraph))
 				{ 

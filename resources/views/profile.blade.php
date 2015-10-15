@@ -1,88 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>P3</title>
-<meta charset="utf-8">    
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="description" content="dehashed password generator">
-<meta name="keywords" content="dehashed, password, generator">
-<meta name="author" content="michaeldepaula">
-<!--CSS-->
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<link href='https://fonts.googleapis.com/css?family=Special+Elite|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
-<!--JS-->
-<script src="{{ asset('js/jquery-1.11.3.min.js') }} "></script>
-<script src="{{ asset('js/custom.js') }} "></script>
-</head>
-<body>
-    <div class="container-fluid">     
-        <!--header-->
-        <header>
-            <div class="row thumb1 text-center">
-                <div class="col-lg-12 hidden-xs">
-                    <p class="title">Developer Best Friend</p>
-                        <div class="status_info">
+@extends('layouts.master')
 
-                        </div>
-		          </div>
-            <!--Mobile Navigation-->
-            <nav class="navbar navbar-default visible-xs">
-                <div class="container-fluid">
-                    <!-- Control -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile1" aria-expanded="false">
-                            <span class="sr-only">Navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">xkcd Password Generator</a>
-                    </div>
-                    <!-- Menu -->
-                    <div class="collapse navbar-collapse" id="mobile1">
-                        <div class="nav navbar-nav">
+@section('title')
+    Ipsum Generator
+@stop
 
-                            <div class="status_info">
-                                <img src="{{ asset('img/off.png') }}" alt="Offline"> Offline dictionary - 500 words<br> 
-                                <img src="{{ asset('img/on.png') }}" alt="Online"> Online dictionary - 3000 words
-                            </div>                            
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            <!--End Mobile Navigation-->        
-            </div>
-		</header>
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 main">
+@section('thumb2-main')
+	thumb2-main2
+@stop
 
+@section('nav-fa')
+    <a href="/home"><i id="nav-1" class="fa fa-bars fa-3x"></i></a><br>
+    <span class="nav-title">Dahsboard</span><br>
+    <i id="nav-2" class="fa fa-file-code-o fa-3x"></i><br>
+    <span class="nav-title">Lorem Ipsum Generator</span><br>
+    <i id="nav-3" class="fa  fa-dot-circle-o fa-3x"></i><br>
+    <span class="nav-title">Profile Maker</span><br>
+    <i id="nav-4" class="fa  fa-tags fa-3x"></i><br>
+    <span class="nav-title">chmod cruncher</span><br>
+    <i id="nav-5" class="fa  fa-cogs fa-3x"></i><br>
+    <span class="nav-title">xkcd password generator</span><br>
+@stop
+
+
+@section('nav-menu')
+
+    @if(isset($text))
+        {{ $profile->showRandom($text) }}
+    @else
+        {{ $profile->showRandom(1) }}
+    @endif
+        
+    <div id="text_generator" class="">
+        <h4>PROFILE MAKER</h4>
+        <form action="/profile" method="post">	
+            <div class="form-group text-left">
+                <input type='hidden' name='_token' value='{{ csrf_token() }}'>
+                <label>Enter the number of user profiles to generate:</label>
+                <input id="text" type="text" class="form-control" name="text" placeholder="number of users" value="{{ $_POST['text'] or 1 }}"><br>															        	
+                <button id="generate" type="submit" class="btn btn-default">Generate</button>
+                <button id="view" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View All</button>
             </div>
-        </div>  
-        <div class="row thumb2">
-            <div class="col-xs-12 col-sm-12 col-md-12s">
-            		
+        </form>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" id="copy" class="btn btn-primary">Select All</button>
             </div>
-        </div>               
+            <div class="modal-body">
+                <textarea  id="paragraph" rows="4" cols="50" readonly>{{ $profile->displayJSON() }}</textarea>
+            </div>
+        </div>
+    </div>
+</div> 
+<!-- End Modal -->    
+    
+@stop
+
+
+@section('nav-slave')
+
+<div class="text-center" style="font-size:12px;"> 
+	<img class="img-profile" src="{{ asset("img/" . $profile->track[0]['img']  . ".jpg") }}" alt=""/><br>
+    <div class="profile_title">{{ $profile->track[0]['name'] }}</div> <br>    
+    <div class="list-group text-left">
+        <a class="list-group-item list-group-item-info text-center">
+        About <strong>{{ $profile->track[0]['name'] }} </strong>
+        </a>
+        <a  class="list-group-item"><strong class="field">ID: </strong>{{ $profile->track[0]['id'] }}</a>
+        <a  class="list-group-item"><strong class="field">Email: </strong>{{ $profile->track[0]['email'] }}</a>    
+        <a  class="list-group-item"><strong class="field">Birthday: </strong>{{ $profile->track[0]['birthday'] }}</a>            
+        <a  class="list-group-item"><strong class="field">Username: </strong>{{ $profile->track[0]['user'] }}</a>
+        <a  class="list-group-item"><strong class="field">Password: </strong>{{ $profile->track[0]['password'] }}</a>
+        <a  class="list-group-item"><strong class="field">Salt: </strong>{{ $profile->track[0]['salt'] }}</a>     
+        <a  class="list-group-item"><strong class="field">Hash: </strong>{{ $profile->track[0]['hash'] }}</a>                
 	</div>
- <!--footer-->
-    <footer>
-        <div class="container footer">
-            <div class="row">
-                <div class="col-md-8">
-                    <p><strong>&copy; 2015 Dehashed.com</strong></p>
-                </div>
-                <div class="col-md-4">
-                    <p><strong>XKCD Webcomics</strong></p>
-                    <ul>
-                        <li><a href="http://xkcd.com/936/">Inspired by XKCD Password Strength Webcomic</a></li>
-                        <li><a href="https://en.wikipedia.org/wiki/Xkcd">More about XKCD</a></li>
-                    </ul>
-                </div>
-                </div>
-            </div>   
-    </footer>
-   	<!--end footer-->     
-    <script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+ 	
+</div> 
+@stop
