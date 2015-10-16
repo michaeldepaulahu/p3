@@ -31,6 +31,9 @@
   height:607px;
   margin:auto 0;
 }
+.thumb3{
+  margin:0 40px 0 40px;
+}
 .thumb2-main{
 	background:url(../img/main-bg.jpg) top no-repeat;
 }
@@ -40,9 +43,12 @@
 .thumb2-main2{
 	background:url(../img/main-bg2.jpg) top no-repeat;	
 }
+.thumb2-main3{
+	background:url(../img/main-bg3.jpg) top no-repeat;	
+}
 
 
-.thumb2-main, .thumb2-main1, .thumb2-main2{
+.thumb2-main, .thumb2-main1, .thumb2-main2, .thumb2-main3{
 	position:relative;
 	overflow:hidden;
 	margin: 0 0 30px;
@@ -150,6 +156,17 @@ footer{
 	color:#fefefe;
 	text-transform:uppercase;
 }
+.slave-container
+{
+	color:#FFFFFF;
+	font-size:12px;	
+}
+.slave-container .head
+{
+	background-color:#222222;
+	color:#FFFFFF;	
+}
+
 .intro{
 	color:#f5f5ed;
 	text-shadow: 2px 2px #090909;
@@ -171,10 +188,25 @@ ul.cp{
 	font-weight:300px;	
 }
 
-.t_title{
+.t_title, .profile_title {
 	font: 45px 'Gloria Hallelujah', cursive;
 }
 
+.profile_title{
+	color:#7fffff;
+}
+
+.chmod_title{
+	color:#3E3E3E;
+	font: 25px 'Gloria Hallelujah', cursive;
+	 background-color:transparent;
+}
+
+.chmod_caption{
+	color:#3E3E3E;
+	font: 18px 'Gloria Hallelujah', cursive;
+	background-color:transparent;	
+}
 .img-profile{
 	border:8px solid #FFFFFF;	
 	box-shadow: 1px 1px 1px #000000;
@@ -183,15 +215,9 @@ ul.cp{
 	height:200px;
 }
 
-.profile_title{
-	font: 45px 'Gloria Hallelujah', cursive;
-	color:#7fffff;
-}
-
 .field{
 	color:#10225A;	
 }
-
 #paragraph, #paragraph1{
 	background: transparent; 
 	width:100%; 
@@ -202,5 +228,16 @@ ul.cp{
 
 .form-control, .label-control, .btn{
  	margin: 3px 0 5px 0;
+}
 
+.allow{
+	color:#10754e;
+}
+.deny{
+	color:#75101e;	
+}
+
+.chmod-bit{
+	color:#000000;
+	font: 40px 'Gloria Hallelujah', cursive;
 }

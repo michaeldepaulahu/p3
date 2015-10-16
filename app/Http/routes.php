@@ -30,6 +30,9 @@ Route::any('/generator', 'GeneratorController@showGenerator');
 Route::get('/profile', 'ProfileController@showProfile');
 Route::post('/profile', 'ProfileController@postProfile');
 
+// show chmpd
+Route::any('/chmod', 'ChmodController@showChmod');
+
 // Loading xkcd within Laravel Framework
 Route::any('/xkcd', 'XkcdController@showXkcd');
 

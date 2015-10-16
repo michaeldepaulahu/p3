@@ -62,7 +62,7 @@
 </div> 
 <!-- End Modal --> 
 
-<div class="text-center" style="color:#FFFFFF; font-size:12px;"> 
+<div class="text-center slave-container"> 
 	<p class="t_title">LOREM IPSUM</p>
 	<?php if(is_array($paragraph))
 	{
