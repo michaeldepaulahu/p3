@@ -105,51 +105,28 @@
         <a  class="list-group-item">
             <div class="row chmod_title text-center">
                 <div class="col-md-4">                
-				<?php
-				 
-				isset($post['ur']) ? $run->send('r'): $run->showPermission ($split[1], "r", 4, 5, 6, 7, '-');
-				isset($post['uw']) ? $run->send('w'): $run->showPermission ($split[1], "w", 2, 3, 6, 7, '-');
-				isset($post['ue']) ? $run->send('x'): $run->showPermission ($split[1], "x", 1, 3, 5, 7, '-');
-                ?>                
+					{!! $run->short(0, 2, $post, $split) !!}                
                 </div> 
                 <div class="col-md-4">
-				<?php
-				isset($post['gr']) ? $run->send('r'): $run->showPermission ($split[2], "r", 4, 5, 6, 7, '-');
-				isset($post['gw']) ? $run->send('w'): $run->showPermission ($split[2], "w", 2, 3, 6, 7, '-');
-				isset($post['ge']) ? $run->send('x'): $run->showPermission ($split[2], "x", 1, 3, 5, 7, '-');					
-				?>                
+					{!! $run->short(3, 5, $post, $split) !!}
                 </div> 
                 <div class="col-md-4">
-				<?php
-				isset($post['or']) ? $run->send('r'): $run->showPermission ($split[3], "r", 4, 5, 6, 7, '-');
-				isset($post['ow']) ? $run->send('w'): $run->showPermission ($split[3], "w", 2, 3, 6, 7, '-');
-				isset($post['oe']) ? $run->send('x'): $run->showPermission ($split[3], "x", 1, 3, 5, 7, '-');					
-				?>                   
+					{!!$run->short(6, 8, $post, $split)  !!}
                 </div>
             </div> 
         </a> 
         <a  class="list-group-item">
             <div class="row chmod_caption text-center">
-                <div class="col-md-4">         
-                 <?php
-				isset($post['ur']) ? $run->send($postSum[3]): $run->showPermission ($split[1], $postSum[3], 4, 5, 6, 7, $postSum[6]);
-				isset($post['uw']) ? $run->send($postSum[4] ): $run->showPermission ($split[1], $postSum[4], 2, 3, 6, 7, $postSum[7]);
-				isset($post['ue']) ? $run->send($postSum[5] ): $run->showPermission ($split[1], $postSum[5], 1, 3, 5, 7, $postSum[8]);					
-				 ?>
+                <div class="col-md-4">     
+	                {!! $run->short(9, 11, $post, $split, $postSum) !!}    
                 </div> 
                 <div class="col-md-4">
-                 <?php
-				isset($post['gr']) ? $run->send($postSum[3]): $run->showPermission ($split[2], $postSum[3], 4, 5, 6, 7, $postSum[6]);
-				isset($post['gw']) ? $run->send($postSum[4] ): $run->showPermission ($split[2], $postSum[4], 2, 3, 6, 7, $postSum[7]);
-				isset($post['ge']) ? $run->send($postSum[5] ): $run->showPermission ($split[2], $postSum[5], 1, 3, 5, 7, $postSum[8]);					
-				 ?>                
+
+					{!! $run->short(12, 14, $post, $split, $postSum) !!}    			
+              
                 </div> 
                 <div class="col-md-4">
-                 <?php
-				isset($post['or']) ? $run->send($postSum[3]): $run->showPermission ($split[3], $postSum[3], 4, 5, 6, 7, $postSum[6]);
-				isset($post['ow']) ? $run->send($postSum[4] ): $run->showPermission ($split[3], $postSum[4], 2, 3, 6, 7, $postSum[7]);
-				isset($post['oe']) ? $run->send($postSum[5] ): $run->showPermission ($split[3], $postSum[5], 1, 3, 5, 7, $postSum[8]);					
-				 ?>  
+					{!! $run->short(15, 17, $post, $split, $postSum) !!}   
                 </div>
             </div> 
         </a>         
@@ -157,7 +134,7 @@
             <div class="row">
                   <div class="col-md-12 chmod-bit">
 					<?php 
-					$postSum[9] != 0 ? $run->send($postSum[9]): $run->send($split[0]);
+					$postSum[9] != 0 ? $run->send($postSum[9]):$run-> send($split[0]);
 					$postSum[0] != 0 ? $run->send($postSum[0]): $run->send($split[1]);
 					$postSum[1] != 0 ? $run->send($postSum[1]): $run->send($split[2]);
 					$postSum[2] != 0 ? $run->send( $postSum[2]): $run->send($split[3]);								

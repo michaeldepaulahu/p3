@@ -13,7 +13,7 @@ class ChmodController extends Controller
 	{
 	   $post = $request->all();
 	   $text = $request->input('text');
-	   $split = str_split($text);
+	   $spl = str_split($text);
 	   
 	   
 	   $userPermission = $this->getInput($request, 'ur','uw','ue');
@@ -44,7 +44,7 @@ class ChmodController extends Controller
 	   return view('chmod')
 	   ->with('post', $post)
 	   ->with('postSum', $postSum)
-	   ->with('split', $split)
+	   ->with('split', $spl)
 	   ->with('run', new ChmodController);		
 	}
 	
@@ -80,6 +80,10 @@ class ChmodController extends Controller
 		}
 	}
 	
+	/**
+	* Handles the text input printing
+	*  
+	*/
 	public function showPermission($splitn, $set, $case1, $case2, $case3, $case4, $get)
 	{
 		$splitn = $splitn;
@@ -93,6 +97,47 @@ class ChmodController extends Controller
 				default:
 					echo $get;
 		}										
+	}	
+	
+	/**
+	* Carries the mission of returning the several seetings in CHMOD
+	*  
+	*/	
+	function short($start, $end, $post, $split, $postSum = NULL)
+	{
+		$array = array (
+		   array('ur','r',1,'r', 4, 5, 6, 7, '-'),
+		   array('uw','w',1,'w', 2, 3, 6, 7, '-'),
+		   array('ue','x',1,'x', 1, 3, 5, 7, '-'),	
+  		   array('gr','r',2,'r', 4, 5, 6, 7, '-'),
+		   array('gw','w',2,'w', 2, 3, 6, 7, '-'),
+		   array('ge','x',2,'x', 1, 3, 5, 7, '-'),
+  		   array('or','r',3,'r', 4, 5, 6, 7, '-'),
+		   array('ow','w',3,'w', 2, 3, 6, 7, '-'),
+		   array('oe','x',3,'x', 1, 3, 5, 7, '-'),
+		   array('ur',$postSum[3],1,$postSum[3], 4, 5, 6, 7, $postSum[6]),
+		   array('uw',$postSum[4],1,$postSum[4], 2, 3, 6, 7, $postSum[7]),
+		   array('ue',$postSum[5],1,$postSum[5], 1, 3, 5, 7, $postSum[8]),
+		   array('gr',$postSum[3],2,$postSum[3], 4, 5, 6, 7, $postSum[6]),
+		   array('gw',$postSum[4],2,$postSum[4], 2, 3, 6, 7, $postSum[7]),
+		   array('ge',$postSum[5],2,$postSum[5], 1, 3, 5, 7, $postSum[8]),	
+		   array('or',$postSum[3],3,$postSum[3], 4, 5, 6, 7, $postSum[6]),
+		   array('ow',$postSum[4],3,$postSum[4], 2, 3, 6, 7, $postSum[7]),
+		   array('oe',$postSum[5],3,$postSum[5], 1, 3, 5, 7, $postSum[8]),			   	   		   	
+		);
+		for($i=$start; $i <= $end; $i++)
+		{
+			isset($post[$array[$i][0]]) ? 
+			$this->send($array[$i][1]) : 
+			$this->showPermission (
+				$split[$array[$i][2]], 
+				$array[$i][3], 
+				$array[$i][4], 
+				$array[$i][5], 
+				$array[$i][6], 
+				$array[$i][7], 
+				$array[$i][8]);
+		}												
 	}	
 	
 	public function send($set) 
