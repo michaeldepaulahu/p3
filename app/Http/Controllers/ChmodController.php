@@ -12,6 +12,9 @@ class ChmodController extends Controller
 	public function showChmod(Request $request)
 	{
 	   $post = $request->all();
+	   $text = $request->input('text');
+	   $split = str_split($text);
+	   
 	   
 	   $userPermission = $this->getInput($request, 'ur','uw','ue');
 	   $groupPermission = $this->getInput($request, 'gr','gw','ge');
@@ -38,7 +41,11 @@ class ChmodController extends Controller
 	   $specialPermission
 	   ); 
 	   
-	   return view('chmod')->with('post', $post)->with('postSum', $postSum);			
+	   return view('chmod')
+	   ->with('post', $post)
+	   ->with('postSum', $postSum)
+	   ->with('split', $split)
+	   ->with('run', new ChmodController);		
 	}
 	
 
@@ -48,7 +55,7 @@ class ChmodController extends Controller
 	*/	
 	public function getInput($request, $read,$write,$execute)
 	{
-	   $read = $request->input($read );
+	   $read = $request->input($read);
 	   $write = $request->input($write);
    	   $execute = $request->input($execute);
 	   return $read + $write + $execute;		
@@ -71,5 +78,25 @@ class ChmodController extends Controller
 			$denied = '<span class="deny">' . $restrict . ' ' . $denied . '</span><br>';
 			return $denied;
 		}
+	}
+	
+	public function showPermission($splitn, $set, $case1, $case2, $case3, $case4, $get)
+	{
+		$splitn = $splitn;
+			switch ($splitn) {
+				case $case1:
+				case $case2:
+				case $case3:
+				case $case4:
+					echo $set;
+					break;
+				default:
+					echo $get;
+		}										
+	}	
+	
+	public function send($set) 
+	{ 
+		echo $set; 
 	}
 }

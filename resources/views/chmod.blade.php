@@ -29,7 +29,7 @@
         <form action="/chmod" method="post">	
             <div class="form-group text-left">
                 <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-                <label class="label-control">1. Enter the number of user:</label>
+                <label class="label-control">1. Enter Octal notation or select permissions below:</label>
                 <input id="text" type="text" class="form-control" name="text" placeholder="number of users" value="{{ $_POST['text'] or 1 }}"><br>      	
                 <label class="label-control">User Permissions:</label>
                 <div class="checkbox">
@@ -104,49 +104,64 @@
         </a>
         <a  class="list-group-item">
             <div class="row chmod_title text-center">
-                <div class="col-md-4">
-                  {{{ isset($post['ur']) ? 'r' : '-' }}}
-                  {{{ isset($post['uw']) ? 'w' : '-' }}}
-                  {{{ isset($post['ue']) ? 'x' : '-' }}}
+                <div class="col-md-4">                
+				<?php
+				 
+				isset($post['ur']) ? $run->send('r'): $run->showPermission ($split[1], "r", 4, 5, 6, 7, '-');
+				isset($post['uw']) ? $run->send('w'): $run->showPermission ($split[1], "w", 2, 3, 6, 7, '-');
+				isset($post['ue']) ? $run->send('x'): $run->showPermission ($split[1], "x", 1, 3, 5, 7, '-');
+                ?>                
                 </div> 
                 <div class="col-md-4">
-                  {{{ isset($post['gr']) ? 'r' : '-' }}}
-                  {{{ isset($post['gw']) ? 'w' : '-' }}}
-                  {{{ isset($post['ge']) ? 'x' : '-' }}}
+				<?php
+				isset($post['gr']) ? $run->send('r'): $run->showPermission ($split[2], "r", 4, 5, 6, 7, '-');
+				isset($post['gw']) ? $run->send('w'): $run->showPermission ($split[2], "w", 2, 3, 6, 7, '-');
+				isset($post['ge']) ? $run->send('x'): $run->showPermission ($split[2], "x", 1, 3, 5, 7, '-');					
+				?>                
                 </div> 
                 <div class="col-md-4">
-                  {{{ isset($post['or']) ? 'r' : '-' }}}
-                  {{{ isset($post['ow']) ? 'w' : '-' }}}
-                  {{{ isset($post['oe']) ? 'x' : '-' }}}   
+				<?php
+				isset($post['or']) ? $run->send('r'): $run->showPermission ($split[3], "r", 4, 5, 6, 7, '-');
+				isset($post['ow']) ? $run->send('w'): $run->showPermission ($split[3], "w", 2, 3, 6, 7, '-');
+				isset($post['oe']) ? $run->send('x'): $run->showPermission ($split[3], "x", 1, 3, 5, 7, '-');					
+				?>                   
                 </div>
             </div> 
         </a> 
         <a  class="list-group-item">
             <div class="row chmod_caption text-center">
                 <div class="col-md-4">         
-                 {!! isset($post['ur']) ? $postSum[3] : $postSum[6] !!} 
-                 {!! isset($post['uw']) ? $postSum[4] : $postSum[7] !!} 
-				 {!! isset($post['ue']) ? $postSum[5] : $postSum[8] !!} 
+                 <?php
+				isset($post['ur']) ? $run->send($postSum[3]): $run->showPermission ($split[1], $postSum[3], 4, 5, 6, 7, $postSum[6]);
+				isset($post['uw']) ? $run->send($postSum[4] ): $run->showPermission ($split[1], $postSum[4], 2, 3, 6, 7, $postSum[7]);
+				isset($post['ue']) ? $run->send($postSum[5] ): $run->showPermission ($split[1], $postSum[5], 1, 3, 5, 7, $postSum[8]);					
+				 ?>
                 </div> 
                 <div class="col-md-4">
-                 {!! isset($post['gr']) ? $postSum[3] : $postSum[6] !!} 
-                 {!! isset($post['gw']) ? $postSum[4] : $postSum[7] !!} 
-				 {!! isset($post['ge']) ? $postSum[5] : $postSum[8] !!} 
+                 <?php
+				isset($post['gr']) ? $run->send($postSum[3]): $run->showPermission ($split[2], $postSum[3], 4, 5, 6, 7, $postSum[6]);
+				isset($post['gw']) ? $run->send($postSum[4] ): $run->showPermission ($split[2], $postSum[4], 2, 3, 6, 7, $postSum[7]);
+				isset($post['ge']) ? $run->send($postSum[5] ): $run->showPermission ($split[2], $postSum[5], 1, 3, 5, 7, $postSum[8]);					
+				 ?>                
                 </div> 
                 <div class="col-md-4">
-                 {!! isset($post['or']) ? $postSum[3] : $postSum[6] !!} 
-                 {!! isset($post['ow']) ? $postSum[4] : $postSum[7] !!} 
-				 {!! isset($post['oe']) ? $postSum[5] : $postSum[8] !!} 
+                 <?php
+				isset($post['or']) ? $run->send($postSum[3]): $run->showPermission ($split[3], $postSum[3], 4, 5, 6, 7, $postSum[6]);
+				isset($post['ow']) ? $run->send($postSum[4] ): $run->showPermission ($split[3], $postSum[4], 2, 3, 6, 7, $postSum[7]);
+				isset($post['oe']) ? $run->send($postSum[5] ): $run->showPermission ($split[3], $postSum[5], 1, 3, 5, 7, $postSum[8]);					
+				 ?>  
                 </div>
             </div> 
         </a>         
         <a class="list-group-item text-center">
             <div class="row">
                   <div class="col-md-12 chmod-bit">
-                    {{ $postSum[9] }}
-                    {{ $postSum[0] }}
-                    {{ $postSum[1] }}
-                    {{ $postSum[2] }}
+					<?php 
+					$postSum[9] != 0 ? $run->send($postSum[9]): $run->send($split[0]);
+					$postSum[0] != 0 ? $run->send($postSum[0]): $run->send($split[1]);
+					$postSum[1] != 0 ? $run->send($postSum[1]): $run->send($split[2]);
+					$postSum[2] != 0 ? $run->send( $postSum[2]): $run->send($split[3]);								
+					?>
                   </div>
             </div>
         </a>                      
