@@ -31,7 +31,10 @@ Route::get('/profile', 'ProfileController@showProfile');
 Route::post('/profile', 'ProfileController@postProfile');
 
 // show chmpd
-Route::any('/chmod', 'ChmodController@showChmod');
+Route::get('/chmod', 'ChmodController@showChmod');
+
+Route::post('/chmod', 'ChmodController@postChmod');
+
 
 // Loading xkcd within Laravel Framework
 Route::any('/xkcd', 'XkcdController@showXkcd');

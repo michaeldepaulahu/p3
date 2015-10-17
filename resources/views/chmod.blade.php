@@ -30,7 +30,16 @@
             <div class="form-group text-left">
                 <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                 <label class="label-control">1. Enter Octal notation or select permissions below:</label>
-                <input id="text" type="text" class="form-control" name="text" placeholder="number of users" value="{{ $_POST['text'] or 1 }}"><br>      	
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul class="list-unstyled">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <input id="text" type="text" class="form-control" name="text" placeholder="number of users" value="{{ '0000' }}"><br>      	
                 <label class="label-control">User Permissions:</label>
                 <div class="checkbox">
                     <label>
@@ -105,40 +114,38 @@
         <a  class="list-group-item">
             <div class="row chmod_title text-center">
                 <div class="col-md-4">                
-					{!! $run->short(0, 2, $post, $split) !!}                
+					{!! $run->mapChmod(0, 2, $post, $split) !!}                
                 </div> 
                 <div class="col-md-4">
-					{!! $run->short(3, 5, $post, $split) !!}
+					{!! $run->mapChmod(3, 5, $post, $split) !!}
                 </div> 
                 <div class="col-md-4">
-					{!!$run->short(6, 8, $post, $split)  !!}
+					{!!$run->mapChmod(6, 8, $post, $split)  !!}
                 </div>
             </div> 
         </a> 
         <a  class="list-group-item">
             <div class="row chmod_caption text-center">
                 <div class="col-md-4">     
-	                {!! $run->short(9, 11, $post, $split, $postSum) !!}    
+	                {!! $run->mapChmod(9, 11, $post, $split, $postSum) !!}    
                 </div> 
                 <div class="col-md-4">
 
-					{!! $run->short(12, 14, $post, $split, $postSum) !!}    			
+					{!! $run->mapChmod(12, 14, $post, $split, $postSum) !!}    			
               
                 </div> 
                 <div class="col-md-4">
-					{!! $run->short(15, 17, $post, $split, $postSum) !!}   
+					{!! $run->mapChmod(15, 17, $post, $split, $postSum) !!}   
                 </div>
             </div> 
         </a>         
         <a class="list-group-item text-center">
             <div class="row">
                   <div class="col-md-12 chmod-bit">
-					<?php 
-					$postSum[9] != 0 ? $run->send($postSum[9]):$run-> send($split[0]);
-					$postSum[0] != 0 ? $run->send($postSum[0]): $run->send($split[1]);
-					$postSum[1] != 0 ? $run->send($postSum[1]): $run->send($split[2]);
-					$postSum[2] != 0 ? $run->send( $postSum[2]): $run->send($split[3]);								
-					?>
+                 	 {!! isset($postSum[9]) && $postSum[9] != 0 ? $run->send($postSum[9]) : $run->send($split[0]) !!}
+                     {!! isset($postSum[0]) && $postSum[0] != 0 ? $run->send($postSum[0]) : $run->send($split[1]) !!}
+                     {!! isset($postSum[1]) && $postSum[1] != 0 ? $run->send($postSum[1]) : $run->send($split[2]) !!}
+                     {!! isset($postSum[2]) && $postSum[2] != 0 ? $run->send($postSum[2]) : $run->send($split[3]) !!}
                   </div>
             </div>
         </a>                      
