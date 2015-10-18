@@ -1,4 +1,17 @@
 <?php
+/**
+* CHMOD Cruncher
+* 
+* Description:
+* This file contains the logic of the CHMOD Cruncher web application. 
+* The CHMOD Cruncher web application allows the user to simulate a 
+* typical call to the chmod command,  which is a command that sets 
+* access permiisions to files and directories in a OS system like Unix.
+*
+* Author: Michael Depaula
+* Copyright: (c) Michael Depaula
+*
+*/
 
 namespace Developerbf\Http\Controllers;
 
@@ -6,8 +19,19 @@ use Illuminate\Http\Request;
 use Developerbf\Http\Requests;
 use Developerbf\Http\Controllers\Controller;
 
+/**
+* ChmodController class
+*
+* This class contains the general logic of the Chmod Cruncher.
+*
+*/
 class ChmodController extends Controller
 {
+	
+    /**
+    * These are permissions variables 
+	* sent to the chmod view
+    */	
     public $read;
     public $write;
     public $execute;
@@ -20,52 +44,71 @@ class ChmodController extends Controller
     public $specialPermission;
     public $postSum = array();
 
+    /**
+    * Function Name : showChmod
+	* Params : Request $request
+	* Route: get - /chmod
+    * Purpose : Send the initial values to the chmod view
+	* 
+	* Returns: 
+	* spl - initial octal perimison
+	* post - sets to no post as default
+	* setHtml tags - prints default permissions
+	* postSum - reads map of permissions as default 
+	* run - sends the controller to the view
+    */	
     public function showChmod(Request $request)
     {
         $spl = array(0,0,0,0);
 
         $post = $request->all();
 
-        $this->setSum($request);
-
         $this->setHtmltags($request);
 
-        $postSum = array (
-            $this->userPermission,
-            $this->groupPermission,
-            $this->otherPermission,
-            $this->read,
-            $this->write,
-            $this->execute,
-            $this->noread,
-            $this->nowrite,
-            $this->noexecute,
-            $this->specialPermission
-        );
+        $postSum = array (0, 0, 0, 0, 0, 0, $this->noread, $this->nowrite, $this->noexecute, 0);
 
         return view('chmod')
+		->with('split', $spl)
 		->with('post', $post)
         ->with('postSum', $postSum)
-        ->with('split', $spl)
         ->with('run', new ChmodController);
     }
 
+    /**
+    * Function Name : postChmod
+	* Params : Request $request
+	* Route: post - /chmod
+    * Purpose : takes permission readings or octal input
+	* and builds the view with permission results
+	* 
+	* Returns: 
+	* spl - splits octal input
+	* post - reads general posted values
+	* setHtml tags - prints processed permissions
+	* postSum - reads map of permissions based on checked
+	* or octal inputs
+    */	
     public function postChmod(Request $request)
     {
-    // validation 
+        // performs octal input validation  
         $this->validate($request, [
             'text'  => 'numeric|digits:4|max:7777'
         ]);
-
+		
+		// takes octal reading and splits each digit 
         $text = $request->input('text');
         $spl = str_split($text);
-
+         
+		// reads all posts
         $post = $request->all();
-
+        
+		// sums the permission and sets to each group
         $this->setSum($request);
-
+        
+		// formats Html results of permissions
         $this->setHtmltags($request);
-
+        
+		// builds an array of permission settins
         $postSum = array (
             $this->userPermission,
             $this->groupPermission,
@@ -79,6 +122,7 @@ class ChmodController extends Controller
             $this->specialPermission
         );	
 	   
+	   // reads map of permissions based on checked or octal inputs
 	   return view('chmod')
 	   ->with('post', $post)
 	   ->with('postSum', $postSum)
@@ -87,32 +131,10 @@ class ChmodController extends Controller
 	}
 
     /**
-    *  reads read, write, execute inputs and calculates the sum 
-    *  of the permissions, then returns the permission result
-    */	
-    private function getSum($request, $read, $write, $execute)
-    {
-        $read = $request->input($read);
-        $write = $request->input($write);
-        $execute = $request->input($execute);
-        return $read + $write + $execute;
-    }
-
-    /**
-    *  defines and sets the user, group, other and special
-    *   permissions 
-    */	
-    private function setSum($request)
-    {
-        $this->userPermission = $this->getSum($request, 'ur','uw','ue');
-        $this->groupPermission = $this->getSum($request, 'gr','gw','ge');
-        $this->otherPermission = $this->getSum($request, 'or','ow','oe');
-        $this->specialPermission = $this->getSum($request, 'su','sg','sb');
-    }
-	
-    /**
-    * Formats the tags  returning allowing and denying permissions
-    *  
+    * Function Name : getHtmltags
+	* Params : $allow = null, $denied = null
+    * Purpose : formats the green-red, allow-deny
+	* permissions
     */			
     private function getHtmltags($allow = null, $denied = null)
     {
@@ -131,7 +153,13 @@ class ChmodController extends Controller
 			return $denied;
         }
     }
-
+	
+    /**
+    * Function Name : setHtmltags
+	* Params : $request
+    * Purpose : Assigns the htmltags values to print in green
+	* -red, allow-deny permissions
+    */		
     private function setHtmltags($request)
     {
         $this->read = $this->getHtmltags('Read', null);
@@ -143,10 +171,12 @@ class ChmodController extends Controller
     }
 
     /**
-    * Handles the text input printing
-    *  
+    * Function Name : selectPermission
+	* Params : $splitn, $set, $case1, $case2, $case3, $case4, $get
+    * Purpose : Reads cases from mapChmod to select the right
+	* permission
     */
-    private function showPermission($splitn, $set, $case1, $case2, $case3, $case4, $get)
+    private function selectPermission($splitn, $set, $case1, $case2, $case3, $case4, $get)
     {
         $splitn = $splitn;
         switch ($splitn) {
@@ -162,11 +192,19 @@ class ChmodController extends Controller
     }
 
     /**
-    * Carries the mission of returning the several seetings in CHMOD
-    *  
+    * Function Name : mapChmod
+	* Params : $start, $end, $post, $split, $postSum = null
+    * Purpose : sets the mapping of permissions. 
+	* For instance, if the checkbox "user, read" is checked, by default 
+	* the value returns 4, as we know that 4, 5, 6 and 7 are all reading values. 
+	* if instead the user enters 4 as the second value e.g. (0400) in the octal input,  
+    * the selectPermission functions will handle the case and return the 
+	* right value (r).
     */	
     public function mapChmod($start, $end, $post, $split, $postSum = null)
     {
+		// first 9 arrays generates the first row
+		// next 9 arrays generates the formatted html permissions
         $array = array (
             array('ur','r',1,'r', 4, 5, 6, 7, '-'),
             array('uw','w',1,'w', 2, 3, 6, 7, '-'),
@@ -187,12 +225,14 @@ class ChmodController extends Controller
             array('ow',$postSum[4],3,$postSum[4], 2, 3, 6, 7, $postSum[7]),
             array('oe',$postSum[5],3,$postSum[5], 1, 3, 5, 7, $postSum[8]),
         );
-
+        
+		// if there is a post from the checkboxes, it prints accordingly  
+		// otherwise uses the selectPermission function to select the correct case 
         for ($i = $start; $i <= $end; $i++)
         {
             isset($post[$array[$i][0]]) ?
             $this->send($array[$i][1]) :
-            $this->showPermission (
+            $this->selectPermission (
                 $split[$array[$i][2]],
                 $array[$i][3],
                 $array[$i][4],
@@ -204,6 +244,39 @@ class ChmodController extends Controller
         }
     }
 	
+    /**
+    * Function Name : getSum
+	* Params : $request, $read, $write, $execute
+    * Purpose : performs each permission calculation (sum) for the user, group,  
+    *  other or special permissions 
+    */	
+    private function getSum($request, $read, $write, $execute)
+    {
+        $read = $request->input($read);
+        $write = $request->input($write);
+        $execute = $request->input($execute);
+        return $read + $write + $execute;
+    }
+
+    /**
+    * Function Name : setSum 
+	* Params : $request, checkbox inputs
+	* Purpose : sets each permission sum for the user, group, other or special 
+    * case permissions 
+    */	
+    private function setSum($request)
+    {
+        $this->userPermission = $this->getSum($request, 'ur','uw','ue');
+        $this->groupPermission = $this->getSum($request, 'gr','gw','ge');
+        $this->otherPermission = $this->getSum($request, 'or','ow','oe');
+        $this->specialPermission = $this->getSum($request, 'su','sg','sb');
+    }
+    
+	/**
+    * Function Name : send 
+	* Params : $set
+	* Purpose : prints permissions when required
+    */			
     public function send($set)
     {
         echo $set;

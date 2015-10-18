@@ -21,23 +21,16 @@ Route::get('/home', function () {
 	return view('home');
 });
 
-// show ipsum generator
-Route::any('/generator', 'GeneratorController@showGenerator');
-//Route::any('/generator', 'GeneratorController@getShow');
+// Route for Ipsum Text Generator
+Route::any('/loremipsum', 'GeneratorController@showGenerator');
 
-
-//show profile
+// Routes for Profile Generator
 Route::get('/profile', 'ProfileController@showProfile');
 Route::post('/profile', 'ProfileController@postProfile');
 
-// show chmpd
+// Routes for CHMOD
 Route::get('/chmod', 'ChmodController@showChmod');
-
 Route::post('/chmod', 'ChmodController@postChmod');
 
-
-// Loading xkcd within Laravel Framework
+// Route for Loading XKCD integrated
 Route::any('/xkcd', 'XkcdController@showXkcd');
-
-
-
