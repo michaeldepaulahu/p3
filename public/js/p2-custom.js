@@ -36,7 +36,7 @@
 			{
 				$(slave).addClass(param1).removeClass(param);
 			}
-		})				
+		})	 			
 	}
 
  // load custom

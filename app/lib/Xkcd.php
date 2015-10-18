@@ -89,7 +89,7 @@ class Xkcd
 	//	WORD GENERATE FUNCTION
 	//	select each word and adds to a track list
 	public function rendword($param)
-	{			
+	{				
 		// validates number 
 		if ($param <= 9)
 		{	
@@ -186,8 +186,6 @@ class Xkcd
 		for ($j=0; $j < sizeof($this->track); $j++)
 		{
 			$j ==  sizeof($this->track)-1 ? $delimiter = "" : $delimiter = 
-			$this->checkfield('delimiter') == "" ? 
-			$this->checkfield('delimiter1') : 
 			$this->checkfield('delimiter');	
 			$format_words .=  $this->generate( $this->words[$this->track[$j]], $delimiter);	 
 		}

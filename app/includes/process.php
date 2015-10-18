@@ -1,6 +1,15 @@
     <div class="form-group" id="words-group">
         <label>Number of Words (Max. 9)</label>
-        <input type="text" class="form-control" name='words' id='words' value="<?php echo $_SESSION['nW']; ?>" maxlength="1">
+               @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul class="list-unstyled">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif        
+        <input type="text" class="form-control" name='words' id='words' value="<?php //echo $_SESSION['nW']; ?>" maxlength="1">
     </div>
     <div class="checkbox">
         <label>
