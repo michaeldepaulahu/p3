@@ -36,6 +36,19 @@
 		});		
 	}
 	
+	// showing modals
+	function replaceClass(id, b1, b2, b3, m1, m2, m3)
+	{
+		$(id).click(function(){
+			$(b1).addClass("hidden");
+			$(b2).addClass("hidden");		
+			$(b3).removeClass("hidden");
+			$(m1).addClass("hidden");
+			$(m2).addClass("hidden");		
+			$(m3).removeClass("hidden");
+	
+		});	
+	}	
  // load custom
 $(document).ready(function(){
 
@@ -46,22 +59,19 @@ $(document).ready(function(){
 	// switching data types
 		getTextSelection('#copy', 'paragraph');
 		getTextSelection('#copy1', 'paragraph1');
-		
-	
-	$("#viewDeft").click(function(){
-		$("#copy1").addClass( "hidden");
-		$("#copy").removeClass( "hidden");;
-		$("#modal-body1").addClass( "hidden");
-		$("#modal-body").removeClass( "hidden");
+		getTextSelection('#copy2', 'paragraph2');
 
-	});
-	
-	$("#viewJson").click(function(){
-		$("#copy").addClass( "hidden");		
-		$("#copy1").removeClass( "hidden");		
-		$("#modal-body").addClass( "hidden");
-		$("#modal-body1").removeClass( "hidden" );
+		replaceClass(
+			"#viewDeft", "#copy1", "#copy2","#copy", 
+			"#modal-body1", "#modal-body2", "#modal-body"
+		);
+		replaceClass(
+			"#viewJson", "#copy", "#copy2","#copy1", 
+			"#modal-body", "#modal-body2", "#modal-body1"
+		);
+		replaceClass(
+			"#viewCSV", "#copy", "#copy1","#cop2", 
+			"#modal-body", "#modal-body1", "#modal-body2"
+		);				
 
-	});
-		 	
 });

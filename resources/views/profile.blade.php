@@ -33,11 +33,21 @@
             <div class="form-group text-left">
                 <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                 <label class="label-control">1. Enter the number of user profiles to generate and click the Generate button:</label>
+                @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <ul class="list-unstyled">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif                
                 <input id="text" type="text" class="form-control" name="text" placeholder="number of users" value="{{ $_POST['text'] or 1 }}"><br>      	
                 <button id="generate" type="submit" class="btn btn-default">Generate</button><br>
                 <label class="label-control">3. Click below to view the formatted data:</label>                 
                 <button id="viewDeft" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View All</button>
                 <button id="viewJson" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View JSON</button>
+                <button id="viewCSV" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View CSV</button>
             </div>
         </form>
     </div>
@@ -50,13 +60,17 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <button type="button" id="copy" class="btn btn-primary">Select All</button>
                     <button type="button" id="copy1" class="btn btn-primary">Select All</button>
+                    <button type="button" id="copy2" class="btn btn-primary">Select All</button>                    
                 </div>
                 <div id="modal-body" class="modal-body">
                     <textarea  id="paragraph" rows="4" cols="50" readonly><?php  $profile->display(); ?></textarea>
                 </div>
                 <div id="modal-body1" class="modal-body">
                     <textarea  id="paragraph1" rows="4" cols="50" readonly><?php  $profile->displayJSON(); ?></textarea>
-                </div>            
+                </div> 
+                <div id="modal-body2" class="modal-body">
+                    <textarea  id="paragraph2" rows="4" cols="50" readonly><?php  $profile->displayCSV(); ?></textarea>
+                </div>                            
             </div>
         </div>
     </div> 
