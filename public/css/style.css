@@ -220,7 +220,7 @@ ul.cp{
 .field{
 	color:#10225A;	
 }
-#paragraph, #paragraph1{
+#paragraph, #paragraph1, #paragraph2{
 	background: transparent; 
 	width:100%; 
 	height:650px; 
@@ -242,4 +242,8 @@ ul.cp{
 .chmod-bit{
 	color:#000000;
 	font: 40px 'Gloria Hallelujah', cursive;
+}
+
+#viewDeft, #viewJson, #viewCSV{
+width:100%; 	
 }
