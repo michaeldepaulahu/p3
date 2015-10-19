@@ -70,7 +70,7 @@ $(document).ready(function(){
 			"#modal-body", "#modal-body2", "#modal-body1"
 		);
 		replaceClass(
-			"#viewCSV", "#copy", "#copy1","#cop2", 
+			"#viewCSV", "#copy", "#copy1","#copy2", 
 			"#modal-body", "#modal-body1", "#modal-body2"
 		);				
 

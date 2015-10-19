@@ -28,14 +28,14 @@
             Welcome to the Developer Best Friend web portal - a central point of access to simple, core and functional web development tools.<br><i class="fa fa-sort-desc"></i>
         </p>
         <h5>LOADED COMPONENTS</h5>
-            <p class="media text-left">
+            <div class="media text-left">
                 <ul class="cp">
                   <li><a href="">Lorem Ipsum Generator</a></li>
                   <li><a href="">Profile Maker</a></li>
                   <li><a href="">Chmod Cruncher</a></li>
                   <li><a href="">XKCD Password Generator</a></li>
                 </ul> 
-            </p>
+            </div>
       </div>
 @stop
 
