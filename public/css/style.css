@@ -3,7 +3,6 @@
  * author: michael depaula
  * custom css style css
 */
-
 @media (min-width: 992px) {
 
 }
@@ -25,8 +24,7 @@
 }
 .thumb1{
   height:100px;
- }
-  
+ } 
 .thumb2{
   height:607px;
   margin:auto 0;
@@ -49,7 +47,6 @@
 .thumb2-main4{
 	background:url(../img/main-bg4.jpg) top no-repeat;	
 }
-
 .thumb2-main, .thumb2-main1, .thumb2-main2, 
 .thumb2-main3, .thumb2-main4{
 	position:relative;
@@ -97,7 +94,6 @@ footer{
 .navbar-header{
 	padding: 0 20px 0 20px; 	
 }
-
 .fa-3x{
 	font-size:3em;	
 	color:#FDFDFD;
@@ -111,8 +107,6 @@ footer{
 	color:#63a4f9;
 	text-shadow: 8px 8px #090909;
 }
-
-
 .nav-fa-container{
 	margin:auto 0;
 }
@@ -125,17 +119,13 @@ footer{
 	float:right;
 	margin-right:0px;
 }
-
 .nav-left{
 	height:750px;
 	text-align:center;
-
 }
-
 .nav-middle{
 	height:750px;
 	text-align:center;
-
 }
 .nav-right{
 	height:750px;
@@ -158,52 +148,42 @@ footer{
 	color:#fefefe;
 	text-transform:uppercase;
 }
-.slave-container
-{
+.slave-container{
 	color:#FFFFFF;
 	font-size:12px;	
 }
-.slave-container .head
-{
+.slave-container .head{
 	background-color:#222222;
 	color:#FFFFFF;	
 }
-
 .intro{
 	color:#f5f5ed;
 	text-shadow: 2px 2px #090909;
 }
-
 .lead{
 	color:#002544;
 }
-
 .media{
 	color:#858a92;
 	font-size: 14px;
 	font-weight:300px;	
 }
-
 ul.cp{
 	color:#424242;
 	font-size: 12px;
 	font-weight:300px;	
 }
-
 .t_title, .profile_title {
 	font: 45px 'Gloria Hallelujah', cursive;
 }
-
 .profile_title{
 	color:#7fffff;
 }
-
 .chmod_title{
 	color:#3E3E3E;
 	font: 25px 'Gloria Hallelujah', cursive;
 	 background-color:transparent;
 }
-
 .chmod_caption{
 	color:#3E3E3E;
 	font: 18px 'Gloria Hallelujah', cursive;
@@ -216,7 +196,6 @@ ul.cp{
 	width:200px;
 	height:200px;
 }
-
 .field{
 	color:#10225A;	
 }
@@ -227,23 +206,19 @@ ul.cp{
 	overflow:scroll; 
 	border:0;"
 }
-
 .form-control, .label-control, .btn{
  	margin: 3px 0 5px 0;
 }
-
 .allow{
 	color:#10754e;
 }
 .deny{
 	color:#75101e;	
 }
-
 .chmod-bit{
 	color:#000000;
 	font: 40px 'Gloria Hallelujah', cursive;
 }
-
 #viewDeft, #viewJson, #viewCSV{
 width:100%; 	
 }
