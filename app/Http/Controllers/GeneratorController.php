@@ -28,9 +28,9 @@ use Badcow\LoremIpsum\Generator;
 class GeneratorController extends Controller
 {	
     /**
-    * Function Name : getShow
-    * Params : N/A
-    * Route: get - /profile 
+    * Function Name : showGenerator
+    * Params : Request $request
+    * Route: get - /loremipsum
     * Purpose : Shows the lorem ipsum generator view
     * 
     * Returns: 
@@ -54,7 +54,7 @@ class GeneratorController extends Controller
 		} else {
 			// sets the default to show at view first entry
             $text= $generator->getParagraphs(1);
-            return view('lorem')->with('paragraph', $text);;
+            return view('lorem')->with('paragraph', $text);
 		}
     }
 }

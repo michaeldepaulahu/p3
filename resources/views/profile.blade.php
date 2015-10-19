@@ -44,7 +44,7 @@
                 @endif                
                 <input id="text" type="text" class="form-control" name="text" placeholder="number of users" value="{{ $_POST['text'] or 1 }}"><br>      	
                 <button id="generate" type="submit" class="btn btn-default">Generate</button><br>
-                <label class="label-control">3. Click below to view the formatted data:</label>                 
+                <label class="label-control">2. Click below to view the formatted data:</label>                 
                 <button id="viewDeft" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View All</button>
                 <button id="viewJson" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View JSON</button>
                 <button id="viewCSV" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View CSV</button>
@@ -66,10 +66,10 @@
                     <textarea  id="paragraph" rows="4" cols="50" readonly><?php  $profile->display(); ?></textarea>
                 </div>
                 <div id="modal-body1" class="modal-body">
-                    <textarea  id="paragraph1" rows="4" cols="50" readonly><?php  $profile->displayJSON(); ?></textarea>
+                    <textarea  id="paragraph1" rows="4" cols="50" readonly><?php  $profile->displayJson(); ?></textarea>
                 </div> 
                 <div id="modal-body2" class="modal-body">
-                    <textarea  id="paragraph2" rows="4" cols="50" readonly><?php  $profile->displayCSV(); ?></textarea>
+                    <textarea  id="paragraph2" rows="4" cols="50" readonly><?php  $profile->displayCsv(); ?></textarea>
                 </div>                            
             </div>
         </div>

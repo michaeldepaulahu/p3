@@ -34,6 +34,3 @@ Route::post('/chmod', 'ChmodController@postChmod');
 
 // Route for Loading XKCD integrated
 Route::any('/xkcd', 'XkcdApiController@showXkcd');
-
-// Route for Loading XKCD integrated
-//Route::any('/xkcd', 'XkcdController@showXkcd');

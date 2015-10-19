@@ -35,7 +35,7 @@ class XkcdApiController extends Controller
     * 
     * Returns: 
     * sends the resutls to the XKCD view to print
-    * passwords and provide online/offline statuses
+    * passwords, provides online/offline statuses
     */	
     public function showXkcd(Request $request)
     {

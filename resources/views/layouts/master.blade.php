@@ -11,8 +11,6 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}" type="text/css"> 
 <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}" type="text/css">
-<link href='https://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Special+Elite|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
 <!--JS-->
 <script src="{{ asset('js/jquery-1.11.3.min.js') }} "></script>
 <script src="{{ asset('js/custom.js') }} "></script>
@@ -23,7 +21,7 @@
             <div class="thumb1"> 
                 <div class="row text-center">
                     <div class="col-md-12">
-                   		<img src="{{ asset('img/logo.png') }}" width="299" height="96" alt=""/> 
+                        <img src="{{ asset('img/logo.png') }}" width="299" height="96" alt="Developer Best Friend Logo"/> 
                     </div> 
                 </div>
             </div>
@@ -34,35 +32,36 @@
                             <div class="row">
                                 <div class="col-md-2 nav-left">
                                     <div class="nav-fa">
-										@yield('nav-fa')
+                                        @yield('nav-fa')
                                     </div>                              
                                 </div>
                                 <div class="col-md-3 nav-middle">
                                 	<div class="nav-menu">
-										@yield('nav-menu')
+                                        @yield('nav-menu')
                                     </div>
                                 </div>
                                 <div class="col-md-7 nav-right">
                                 	<div class="nav-slave">
-										@yield('nav-slave')                                    
-                                    </div>                                
+                                        @yield('nav-slave')
+                                    </div>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
- <!--footer-->
-    <footer>
-        <div class="container footer">
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <p><strong>&copy; {{ date('Y') }} Dehashed.com</strong></p>
                 </div>
-            </div>   
-    </footer>
-   	<!--end footer-->      
+            </div> 
+        </div>  
+    </div>
+   	<!--end footer-->
     <script src="{{ asset('js/bootstrap.min.js') }} "></script>      
     </body>
 </html>

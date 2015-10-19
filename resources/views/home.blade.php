@@ -25,7 +25,7 @@
     <div id="dashboard" class="text-left">
         <h4>DASHBOARD</h4>
         <p class="media text-left">
-            Welcome to the Developer Best Friend web portal - a central point of access to simple, core and functional web development tools.<br><i class="fa fa-sort-desc"></i> 
+            Welcome to the Developer Best Friend web portal - a central point of access to simple, core and functional web development tools.<br><i class="fa fa-sort-desc"></i>
         </p>
         <h5>LOADED COMPONENTS</h5>
             <p class="media text-left">
@@ -43,7 +43,8 @@
     <div class="text-center">
         <h1 class="intro">Boost Productivity and Build like a Pro.</h1>
         <p class="lead">
-            Speed-up the development of your website with the Best Friend Developer tools.</p>
+            Speed-up the development of your website with the Best Friend Developer tools.
+        </p>
         <p>
             <img src="{{ asset('img/video.jpg') }}" width="620" height="290" alt=""/> 
         </p>

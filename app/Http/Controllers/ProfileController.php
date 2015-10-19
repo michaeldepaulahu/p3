@@ -117,7 +117,7 @@ class ProfileController extends Controller
             // IDs and hashes - passwords are generated using the the XKCD app
             $salt = $this->salt();
 			
-            $xkcd =  $this->Xkcd();
+            $xkcd =  $this->xkcd();
 			
             $this->doRandom(0, $this->name, $this->track_name);	
 			
@@ -208,7 +208,7 @@ class ProfileController extends Controller
     * add the value to the corresponding track array, so the autoCreateList
     * method can use these values to generate the end profile list
     */	
-    private function Xkcd()
+    private function xkcd()
     {
         // similates the the $_POST from XKCD form
         $_POST['words'] = 2;
@@ -217,7 +217,7 @@ class ProfileController extends Controller
         $_POST['delimiter'] = "-";
 
         // returns the XKCD password 
-        $custom = new Xkcd('words');
+        $custom = new xkcd('words');
         return $custom->display();
     }		
 
@@ -270,24 +270,24 @@ class ProfileController extends Controller
     }
 	
     /**
-    * Function Name : displayJSON
+    * Function Name : displayJson
     * 
     * Purpose : displays/prints profile list 
     * JSON format
     */		
-    public function displayJSON()
+    public function displayJson()
     {
         $json = json_encode($this->track, JSON_PRETTY_PRINT |  256 | 16 |JSON_UNESCAPED_SLASHES);
         echo $json;		
     }
 
     /**
-    * Function Name : displayCSV
+    * Function Name : displayCsv
     * 
     * Purpose : displays/prints profile list 
     * CSV format as comma delimited
     */		
-    public function displayCSV()
+    public function displayCsv()
     {
         // comma delimited headers
         echo 'id,email,birthday,name,user,password,salt,hash,img' . "\n";
