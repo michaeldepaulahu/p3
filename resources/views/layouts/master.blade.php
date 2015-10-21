@@ -61,28 +61,16 @@
                                         </nav>
                                     </div>                              
                                 </div>
-                                <div class="col-md-3 col-lg-3 nav-middle hidden-sm hidden-xs">
+                                <div class="col-xs-12 col-md-3 col-lg-3 nav-middle">
                                 	<div class="nav-menu">
                                         @yield('nav-menu')
                                     </div>
                                 </div>                                
-                                <div class="col-xs-12 nav-middle1 hidden-md hidden-lg">
-                                	<div class="nav-menu1">
-                                        @yield('nav-menu')
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-7 nav-right hidden-sm hidden-xs">
+                                <div class="col-xs-12 col-md-6 col-lg-7 nav-right">
                                 	<div class="nav-slave">
-                                        @yield('nav-slave')
-                                        @yield('nav-slave1')                                        
+                                        @yield('nav-slave')                                       
                                     </div>
                                 </div>                                
-                                <div class="col-xs-12 nav-right hidden-md hidden-lg">
-                                    <div class="nav-slave1">
-                                         @yield('nav-slave')
-                                         @yield('nav-slave2')
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

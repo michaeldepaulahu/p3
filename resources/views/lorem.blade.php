@@ -99,7 +99,7 @@
         </div>
     </div> 
     <!-- End Modal --> 
-    <div class="text-center slave-container"> 
+    <div class="text-center slave-container hidden-xs hidden-md"> 
         <p class="t_title">LOREM IPSUM</p>
         <div class="row">
             <div class="col-md-{{ $page }} {{ $align }}">        

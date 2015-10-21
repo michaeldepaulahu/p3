@@ -106,7 +106,7 @@
 @stop
 
 @section('nav-slave')
-    <div class="text-center slave-container"> 
+    <div class="text-center slave-container hidden-xs hidden-md"> 
         <img class="img-profile" src="{{ asset("img/" . $profile->track[0]['img']) }}" alt=""/><br>
         <div class="profile_title">{{ $profile->track[0]['name'] }} </div> <br>    
         <div class="list-group text-left">

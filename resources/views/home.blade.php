@@ -39,8 +39,8 @@
       </div>
 @stop
 
-@section('nav-slave1')
-    <div class="text-center">
+@section('nav-slave')
+    <div id="nav-slave1" class="text-center hidden-xs hidden-sm">
         <h1 class="intro">Boost Productivity and Build like a Pro.</h1>
         <p class="lead">
             Speed-up the development of your website with the Best Friend Developer tools.
@@ -50,10 +50,7 @@
                 <iframe width="420" src="http://www.youtube.com/embed/yEDVJR_ptrE?rel=0&amp;start=<?php if (isset($_GET['start'])) echo $_GET['start']; else { $auto = 0; echo 0; } ?>&amp;end=<?php if (isset($_GET['end'])) echo  $_GET['end']; else { echo 437; } ?>&amp;autoplay={!! $auto or 1  !!}" allowfullscreen></iframe> 
             </div>
     </div>  
-@stop
-
-@section('nav-slave2')
-    <div class="text-center">
+    <div id="nav-slave2" class="text-center hidden-md hidden-lg">
         <h1 class="intro">Boost Productivity and Build like a Pro.</h1>
         <p class="lead lead_mobile">
             Speed-up the development of your website with the Best Friend Developer tools.

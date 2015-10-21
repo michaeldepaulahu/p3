@@ -4,7 +4,60 @@
  * custom css style css
  * @font-face - using Google Fonts
 */
-
+@media (max-width: 767px) {
+.nav-menu{
+	background-color: #EBEBEB;
+	width:100%;
+	padding:5px;
+}
+.nav-slave{
+	width:100%;
+	background-color:#4C5D78;
+}
+}
+@media (min-width: 768px) {
+.nav-menu{
+	background-color: #EBEBEB;
+	width:100%;
+	padding:5px;
+}
+.nav-slave{
+	width:100%;
+	background-color:#4C5D78;;
+}
+}
+@media (min-width: 992px) {
+.nav-menu{
+	background-color: #EBEBEB;
+	width:250px;
+	height:750px;
+	padding:20px;
+}
+.nav-slave{
+	height:750px;
+	padding:20px;	
+}
+.nav-slave{
+	background-image:url(../img/fa-nav-bg.png);
+	width:90%;
+}
+}
+@media (min-width: 1200px) {
+.nav-menu{
+	background-color: #EBEBEB;
+	width:250px;
+	height:750px;
+	padding:20px;
+}
+.nav-slave, .nav-slave1{
+	height:750px;
+	padding:20px;	
+}
+.nav-slave{
+	background-image:url(../img/fa-nav-bg.png);
+	width:90%;
+}
+}
 /* Google Font - Gloria Hallelujah */
 @font-face {
   font-family: 'Gloria Hallelujah';
@@ -168,29 +221,6 @@
 .nav-right1{
     width:100%;
 	text-align:center;
-}
-.nav-menu{
-	background-color: #EBEBEB;
-	width:250px;
-	height:750px;
-	padding:20px;
-}
-.nav-menu1{
-	background-color: #EBEBEB;
-	width:100%;
-	padding:5px;
-}
-.nav-slave, .nav-slave1{
-	height:750px;
-	padding:20px;	
-}
-.nav-slave{
-	background-image:url(../img/fa-nav-bg.png);
-	width:90%;
-}
-.nav-slave1{
-	background-image:url(../img/fa-nav-bg1.png);
-	width:100%;
 }
 .nav-title{
 	font: 17px calibri, arial, "Times New Roman", serif;
