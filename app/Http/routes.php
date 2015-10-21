@@ -11,11 +11,6 @@
 |
 */
 
-// place holder route to under construction page
-Route::get('/', function () {
-	return Redirect::to('http://p1.dehashed.com/under_constr.php');
-});
-
 // routing to home page 
 Route::get('/home/{start?}/{end?}', function () {
 	return view('home');

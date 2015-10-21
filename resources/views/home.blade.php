@@ -30,23 +30,53 @@
         <h5>LOADED COMPONENTS</h5>
             <div class="media text-left">
                 <ul class="cp">
-                  <li><a href="/home/57/90/">Lorem Ipsum Generator</a></li>
-                  <li><a href="">Profile Maker</a></li>
-                  <li><a href="">Chmod Cruncher</a></li>
-                  <li><a href="">XKCD Password Generator</a></li>
+                  <li><a href="/home?start=57&end=90">Lorem Ipsum Generator</a></li>
+                  <li><a href="/home?start=108&end=188">Profile Maker</a></li>
+                  <li><a href="/home?start=189&end=257">Chmod Cruncher</a></li>
+                  <li><a href="/home?start=258&end=437">XKCD Password Generator</a></li>
                 </ul> 
             </div>
       </div>
 @stop
 
-@section('nav-slave')
+@section('nav-slave1')
     <div class="text-center">
         <h1 class="intro">Boost Productivity and Build like a Pro.</h1>
         <p class="lead">
             Speed-up the development of your website with the Best Friend Developer tools.
         </p>
         <p>
-<iframe width="620" height="290" src="http://www.youtube.com/embed/SMIqux_jN6c?rel=0&start=258&end=272&autoplay=0" frameborder="0" allowfullscreen></iframe>
+            <div class="video">
+                    <iframe width="420" src="http://www.youtube.com/embed/yEDVJR_ptrE?rel=0&start=
+			    	<?php 
+				    // retrieves video positioning
+    				if (isset($_GET['start']))
+	    				echo $_GET['start'];
+		    		else { 
+			    		$auto = 0; 
+				    	echo 0; 
+    				} 
+	    			?>&end=
+		    		<?php 
+			    	if (isset($_GET['end']))
+    					echo  $_GET['end'];  
+	    			else {
+		    			echo 437; 
+			    	}
+				    ?>&autoplay={!! $auto or 1  !!}" frameborder="0" allowfullscreen></iframe>  
+            </div> 
+        </p>
+    </div>  
+@stop
+
+@section('nav-slave2')
+    <div class="text-center">
+        <h1 class="intro">Boost Productivity and Build like a Pro.</h1>
+        <p class="lead lead_mobile">
+            Speed-up the development of your website with the Best Friend Developer tools.
+        </p>
+        <p>
+            <img class="img-responsive" src="{{ asset('img/thumb.jpg') }}" alt="home intro">
         </p>
     </div>  
 @stop

@@ -74,11 +74,13 @@
                                 <div class="col-md-6 col-lg-7 nav-right hidden-sm hidden-xs">
                                 	<div class="nav-slave">
                                         @yield('nav-slave')
+                                        @yield('nav-slave1')                                        
                                     </div>
                                 </div>                                
                                 <div class="col-xs-12 nav-right hidden-md hidden-lg">
-                                	<div class="nav-slave1">
-                                        @yield('nav-slave')
+                                    <div class="nav-slave1">
+                                         @yield('nav-slave')
+                                         @yield('nav-slave2')
                                     </div>
                                 </div>
                             </div>

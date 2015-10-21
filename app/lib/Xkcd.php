@@ -1,5 +1,16 @@
 <?php
-
+/**
+* XKCD Password Generator
+* 
+* Description:
+* This password generator, inspired by the XKCD webcomic, allows for 
+* auto-generation of highly secure passwords by employing randomization 
+* of a mix of letters, numbers and special characters attributes. 
+*
+* Author: Michael Depaula
+* Copyright: (c) Michael Depaula
+*
+*/
 namespace Developerbf\lib;
 
 class Xkcd
@@ -54,6 +65,7 @@ class Xkcd
 	//	Retrieves words from external server, or local to build dictonary
 	public function glossary()
 	{
+		// online off for integration. 
 		// checks if external server is live running
 		/*$fp = @fsockopen("www.paulnoll.com", 80, $errno, $errstr,3);
 		if (is_resource($fp))

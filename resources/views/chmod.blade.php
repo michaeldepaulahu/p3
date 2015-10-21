@@ -22,7 +22,7 @@
 @stop
 
 @section('nav-menu')  
-    <div id="text_generator" class="">
+    <div id="text_generator">
         <h4>CHMOD CRUNCHER</h4>
         <form action="/chmod" method="post" id="chmod_form">	
                <div class="form-group text-left">

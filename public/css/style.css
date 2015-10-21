@@ -4,9 +4,7 @@
  * custom css style css
  * @font-face - using Google Fonts
 */
-@media (min-width: 992px) {
 
-}
 /* Google Font - Gloria Hallelujah */
 @font-face {
   font-family: 'Gloria Hallelujah';
@@ -96,10 +94,7 @@
 #words-group, #words-group1{
 	margin-bottom:0; 	
 }
-.form-inline .form-control{
-	width:40px;	
-}
-.symbols{
+.form-inline .form-control, .symbols{
 	width:40px;	
 }
 .animate{
@@ -159,7 +154,7 @@
 	float:left;
 	margin-right:0px;
 }
-.nav-left{
+.nav-left, .nav-middle, .nav-right{
 	height:750px;
 	text-align:center;
 }
@@ -167,15 +162,7 @@
 	height:5px;
 	text-align:center;
 }
-.nav-middle{
-	height:750px;
-	text-align:center;
-}
 .nav-middle1{
-	text-align:center;
-}
-.nav-right{
-	height:750px;
 	text-align:center;
 }
 .nav-right1{
@@ -192,32 +179,32 @@
 	background-color: #EBEBEB;
 	width:100%;
 	padding:5px;
-
+}
+.nav-slave, .nav-slave1{
+	height:750px;
+	padding:20px;	
 }
 .nav-slave{
 	background-image:url(../img/fa-nav-bg.png);
 	width:90%;
-	height:750px;
-	padding:20px;
 }
 .nav-slave1{
-	background-image:url(../img/fa-nav-bg.png);
+	background-image:url(../img/fa-nav-bg1.png);
 	width:100%;
-	height:750px;
-	padding:20px;
 }
 .nav-title{
 	font: 17px calibri, arial, "Times New Roman", serif;
 	color:#fefefe;
 	text-transform:uppercase;
 }
+.slave-container, .slave-container{
+	color:#FFFFFF;	
+}
 .slave-container{
-	color:#FFFFFF;
 	font-size:12px;	
 }
 .slave-container .head{
-	background-color:#222222;
-	color:#FFFFFF;	
+	background-color:#222222;	
 }
 .intro{
 	color:#f5f5ed;
@@ -225,6 +212,9 @@
 }
 .lead{
 	color:#002544;
+}
+.lead_mobile{
+	color:#CDCDCD;	
 }
 .media{
 	color:#858a92;
@@ -245,7 +235,7 @@ ul.cp{
 .chmod_title{
 	color:#3E3E3E;
 	font: 25px 'Gloria Hallelujah', cursive;
-	 background-color:transparent;
+	background-color:transparent;
 }
 .chmod_caption{
 	color:#3E3E3E;
@@ -260,7 +250,10 @@ ul.cp{
 	height:200px;
 }
 .field{
-	color:#10225A;	
+	color:#10225A;
+}
+.list-group-item{
+	word-wrap: break-word;
 }
 #paragraph, #paragraph1, #paragraph2{
 	background: transparent; 
@@ -284,4 +277,23 @@ ul.cp{
 }
 #viewDeft, #viewJson, #viewCSV{
 width:100%; 	
+}
+.ctrl-profile, .ctrljson-profile, .ctrlcsv-profile, .ctrl-lorem{
+	display:none;
+}
+.view-nav{
+width: 100%;	
+}
+.video {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+}
+.video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }

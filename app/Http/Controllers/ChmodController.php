@@ -18,6 +18,8 @@ namespace Developerbf\Http\Controllers;
 use Illuminate\Http\Request;
 use Developerbf\Http\Requests;
 use Developerbf\Http\Controllers\Controller;
+use Validator;
+use Illuminate\Support\ServiceProvider;
 
 /**
 * ChmodController class
@@ -27,7 +29,6 @@ use Developerbf\Http\Controllers\Controller;
 */
 class ChmodController extends Controller
 {
-	
     /**
     * These are permissions variables 
 	* sent to the chmod view
@@ -43,6 +44,8 @@ class ChmodController extends Controller
     public $otherPermission;
     public $specialPermission;
     public $postSum = array();
+	public $check; 
+	public $recheck = array(); 
 
     /**
     * Function Name : showChmod
@@ -68,8 +71,8 @@ class ChmodController extends Controller
         $postSum = array (0, 0, 0, 0, 0, 0, $this->noread, $this->nowrite, $this->noexecute, 0);
 
         return view('chmod')
-		->with('split', $spl)
-		->with('post', $post)
+        ->with('split', $spl)
+        ->with('post', $post)
         ->with('postSum', $postSum)
         ->with('run', new ChmodController);
     }
@@ -90,10 +93,44 @@ class ChmodController extends Controller
     */	
     public function postChmod(Request $request)
     {
-        // performs octal input validation  
-        $this->validate($request, [
+        // performs textbox validation for octal input		
+		$validator = Validator::make($request->all(), [
             'text'  => 'numeric|digits:4|max:7777'
         ]);
+        
+		// builds checkbox input list to capture
+        $checkbox = array(
+            'ur', 'uw', 'ue', 'gr', 'gw', 'ge', 
+            'or', 'ow', 'oe', 'su', 'sg', 'sb'
+       );
+
+        // loops to to check if any box was checked
+        foreach ($checkbox as $value)
+        {
+            if($request->input($value) != NULL)
+            {
+                $this->recheck = 1;
+                break; 
+            } 
+        }	
+		
+		// captures checkbox input 
+        $this->check = $request->input('text');
+		
+		// initiates custom validation to ensure that octal and
+		// checkbox are not processed at the same time - either or
+		$validator->after(function($validator) {
+			if ($this->check != '0000' && $this->recheck != NULL) {
+				$validator->errors()->add('text', 'Entering octal notation along with checkboxes is not permitted ');
+			}
+		});
+
+		// sends validation check
+		if ($validator->fails()) {
+		    return redirect('/chmod')
+		        ->withErrors($validator)
+		        ->withInput();
+        }
 		
 		// takes octal reading and splits each digit 
         $text = $request->input('text');

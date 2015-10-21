@@ -45,15 +45,43 @@
                 <input id="text" type="text" class="form-control" name="text" placeholder="number of users" value="{{ $_POST['text'] or 1 }}"><br>      	
                 <button id="generate" type="submit" class="btn btn-default">Generate</button><br>
                 <label class="label-control">2. Click below to view the formatted data:</label>                 
-                <button id="viewDeft" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View All</button>
-                <button id="viewJson" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View JSON</button>
-                <button id="viewCSV" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View CSV</button>                             
+                <button id="viewDeft" type="button" class="btn btn-default hidden-sm hidden-xs" data-toggle="modal" data-target="#myModal">View All</button>
+                <button id="viewJson" type="button" class="btn btn-default hidden-sm hidden-xs" data-toggle="modal" data-target="#myModal">View JSON</button>
+                <button id="viewCSV" type="button" class="btn btn-default hidden-sm hidden-xs" data-toggle="modal" data-target="#myModal">View CSV</button>                             
             </div>
         </form>
     </div>
+    	<!--Mobile View-->
+            <div class="mobile-viewnav hidden-md hidden-lg">   
+                <ul class="nav nav-tabs">
+                  <li role="presentation" class="active view-nav"><a class="view-p-all">View ALL</a></li>
+                </ul>
+                <div class="tab">
+                  <div class="well ctrl-profile">
+                    <?php  $profile->display(); ?>
+                  </div>
+              	</div>
+                <ul class="nav nav-tabs">
+                  <li role="presentation" class="active view-nav"><a class="view-p-json">JSON</a></li>
+                </ul>
+                <div class="tab">
+                  <div class="well ctrljson-profile">
+                    <?php  $profile->displayJson(); ?>
+                  </div>
+              	</div>                
+                <ul class="nav nav-tabs">
+                  <li role="presentation" class="active view-nav"><a class="view-p-csv">View CSV</a></li>
+                </ul>
+                <div class="tab">
+                  <div class="well ctrlcsv-profile">
+                    <?php  $profile->displayCsv(); ?>
+                  </div>
+              	</div>                  
+            </div> 
+       <!--End Mobile View-->
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" hidden-sm hidden-xs>
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

@@ -53,10 +53,28 @@
                     <option value="text-justify">Justify</option>
                 </select>                															        	
                 <button id="generate" type="submit" class="btn btn-default">Generate</button>
-                <button id="view" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View</button>
+                <button id="view" type="button" class="btn btn-default hidden-sm hidden-xs" data-toggle="modal" data-target="#myModal">View</button>
             </div>
         </form>
     </div>
+    <!--Mobile View-->
+    <div class="mobile-viewnav hidden-md hidden-lg">   
+        <ul class="nav nav-tabs">
+           <li role="presentation" class="active view-nav"><a class="view-i-all">View ALL</a></li>
+        </ul>
+        <div class="tab">
+            <div class="well ctrl-lorem">
+                <?php 
+                   if(is_array($paragraph)){
+                       echo implode('<p><p>', $paragraph); 
+                    } else {
+                       echo $paragraph;	
+                    }
+                ?> 
+            </div>
+        </div>                 
+    </div> 
+    <!--End Mobile View-->    
 @stop
 
 @section('nav-slave')
@@ -81,19 +99,18 @@
         </div>
     </div> 
     <!-- End Modal --> 
-
     <div class="text-center slave-container"> 
         <p class="t_title">LOREM IPSUM</p>
         <div class="row">
             <div class="col-md-{{ $page }} {{ $align }}">        
-        <?php 
-            if(is_array($paragraph)){
-                echo implode('<p><p>', $paragraph); 
-            } else {
-                echo $paragraph;	
-            }
-        ?> 
-        </div>
+                <?php 
+                    if(is_array($paragraph)){
+                        echo implode('<p><p>', $paragraph); 
+                        } else {
+                        echo $paragraph;	
+                    }
+                ?> 
+            </div>
         </div>
     </div> 
 @stop

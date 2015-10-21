@@ -24,8 +24,8 @@
 @section('nav-menu')  
     <div id="text_generator">
         <h4>XKCD Generator</h4>
-        <form method='POST' action='/xkcd' class="form-inline hidden-xs">
-            {!! Form::token() !!}
+        <form method='POST' action='/xkcd' class="form-inline">
+            <input type='hidden' name='_token' value='{{ csrf_token() }}'>  
             <div class="form-group" id="words-group">
                 <label>Number of Words (Max. 9)</label>
                        @if (count($errors) > 0)
@@ -37,9 +37,9 @@
                                 </ul>
                             </div>
                         @endif        
-                <input type="text" class="form-control" name='words' id='words' value="<?php echo $_SESSION['nW']; ?>" maxlength="2">
+                <input type="text" class="" name='words' id='words' value="<?php echo $_SESSION['nW']; ?>" maxlength="2">
             </div>
-            <div class="checkbox">
+            <div class="checkbox text-center">
                 <label>
                 <input type="checkbox" name="checkbox"> Add a number
                 </label>

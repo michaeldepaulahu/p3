@@ -32,8 +32,8 @@ class ProfileController extends Controller
     * actual list is pre-generated. The declared empty arrays will
     * hold the generated values. 
     */
-    const LISTS = 10;
-    const MAXLIST = 10;
+    const LISTS = 30;
+    const MAXLIST = 30;
     public $profile = array();
     public $track = array();
     public $name = array();
@@ -82,7 +82,7 @@ class ProfileController extends Controller
     {
         // performs  input validation  
         $this->validate($request, [
-            'text'  => 'numeric|integer|max:10'
+            'text'  => 'numeric|integer|max:30'
         ]);
 
         $text = $request->input('text');
