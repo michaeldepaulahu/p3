@@ -15,8 +15,8 @@ The developer best friend tool is packed with four powerful web applications:
 
 ## Demo
 Demo can be viewed at the youtube link below or at the home page of the site itself at:
-<http://p3.dehashed.com>
-<https://www.youtube.com/watch?v=yEDVJR_ptrE>
+* <http://p3.dehashed.com>
+* <https://www.youtube.com/watch?v=yEDVJR_ptrE>
 
 ## Details for teaching team
 
@@ -59,4 +59,4 @@ Demo can be viewed at the youtube link below or at the home page of the site its
 
 ## Notes 
 XKCD CLass integration is under app/lib directory. 
-Also, a video is available at the site with a demo of how to use each app. 
+Also, a video is available at the site with a demo of how to use each app. how to use each app. 
