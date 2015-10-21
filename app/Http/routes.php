@@ -12,7 +12,7 @@
 */
 
 // routing to home page 
-Route::get('/home/{start?}/{end?}', function () {
+Route::get('/{start?}/{end?}', function () {
 	return view('home');
 });
 
