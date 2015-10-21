@@ -32,7 +32,7 @@
         <form action="/profile" method="post">	
             <div class="form-group text-left">
                 <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-                <label class="label-control">1. Enter the number of user profiles to generate and click the Generate button:</label>
+                <label class="label-control">1. Enter the number of user profiles to generate and click the Generate button:<br> (Max 30)</label>
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
                         <ul class="list-unstyled">

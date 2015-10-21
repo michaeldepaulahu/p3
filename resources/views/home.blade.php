@@ -22,7 +22,7 @@
 @stop
 
 @section('nav-menu')
-    <div id="dashboard" class="text-left">
+    <div class="text-left">
         <h4>DASHBOARD</h4>
         <p class="media text-left">
             Welcome to the Developer Best Friend web portal - a central point of access to simple, core and functional web development tools.<br><i class="fa fa-sort-desc"></i>
@@ -30,10 +30,10 @@
         <h5>LOADED COMPONENTS</h5>
             <div class="media text-left">
                 <ul class="cp">
-                  <li><a href="/?start=57&end=90">Lorem Ipsum Generator</a></li>
-                  <li><a href="/?start=108&end=188">Profile Maker</a></li>
-                  <li><a href="/?start=189&end=257">Chmod Cruncher</a></li>
-                  <li><a href="/?start=258&end=437">XKCD Password Generator</a></li>
+                  <li><a href="/?start=57&amp;end=90">Lorem Ipsum Generator</a></li>
+                  <li><a href="/?start=108&amp;end=188">Profile Maker</a></li>
+                  <li><a href="/?start=189&amp;end=257">Chmod Cruncher</a></li>
+                  <li><a href="/?start=258&amp;end=437">XKCD Password Generator</a></li>
                 </ul> 
             </div>
       </div>
@@ -47,23 +47,7 @@
         </p>
         <p>
             <div class="video">
-                    <iframe width="420" src="http://www.youtube.com/embed/yEDVJR_ptrE?rel=0&start=
-			    	<?php 
-				    // retrieves video positioning
-    				if (isset($_GET['start']))
-	    				echo $_GET['start'];
-		    		else { 
-			    		$auto = 0; 
-				    	echo 0; 
-    				} 
-	    			?>&end=
-		    		<?php 
-			    	if (isset($_GET['end']))
-    					echo  $_GET['end'];  
-	    			else {
-		    			echo 437; 
-			    	}
-				    ?>&autoplay={!! $auto or 1  !!}" frameborder="0" allowfullscreen></iframe>  
+                <iframe width="420" src="http://www.youtube.com/embed/yEDVJR_ptrE?rel=0&amp;start=<?php if (isset($_GET['start'])) echo $_GET['start']; else { $auto = 0; echo 0; } ?>&amp;end=<?php if (isset($_GET['end'])) echo  $_GET['end']; else { echo 437; } ?>&amp;autoplay={!! $auto or 1  !!}" frameborder="0" allowfullscreen></iframe> 
             </div> 
         </p>
     </div>  

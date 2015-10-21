@@ -27,7 +27,7 @@
         <form action="/chmod" method="post" id="chmod_form">	
                <div class="form-group text-left">
                 <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-                <label class="label-control">1. Enter Octal notation</label>
+                <label class="label-control">1. Enter Octal notation<br> (4 digits)</label>
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
                         <ul class="list-unstyled">
