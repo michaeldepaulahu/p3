@@ -49,13 +49,27 @@
 	
 		});	
 	}	
+	
  // load custom
 $(document).ready(function(){
-
+	
 	// input check
 	getID();
-	
-	
+
+    // ensures that octal and checkbox permissions are sent without 
+	// conflicting with each other
+    $('#text').keydown(function() {
+        if ($("#chmod_form input:checkbox:checked").length > 0)
+        {
+            $(":checkbox").attr('checked', false);
+        }
+    }); 
+
+    $(":checkbox").click(function() {
+        $('#text').val('0000');
+		document.getElementById('generate').disabled = false;
+    }); 
+
 	// switching data types
 		getTextSelection('#copy', 'paragraph');
 		getTextSelection('#copy1', 'paragraph1');

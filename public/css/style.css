@@ -135,7 +135,7 @@
     -webkit-transition: font-size 0.5s, color 0.5s, text-shadow 0.5s;
     transition: font-size 0.5s, color 0.5s, text-shadow 0.5s; 	
 }
-.fa:hover {
+.fa:hover, .fa-active {
     font-size: 4em;
 	color:#63a4f9;
 	text-shadow: 8px 8px #090909;
@@ -152,16 +152,34 @@
 	float:right;
 	margin-right:0px;
 }
+.nav-fa1{
+	width:100%;
+	padding-top:10px;
+	text-align:center;
+	float:left;
+	margin-right:0px;
+}
 .nav-left{
 	height:750px;
+	text-align:center;
+}
+.nav-left1{
+	height:5px;
 	text-align:center;
 }
 .nav-middle{
 	height:750px;
 	text-align:center;
 }
+.nav-middle1{
+	text-align:center;
+}
 .nav-right{
 	height:750px;
+	text-align:center;
+}
+.nav-right1{
+    width:100%;
 	text-align:center;
 }
 .nav-menu{
@@ -170,9 +188,21 @@
 	height:750px;
 	padding:20px;
 }
+.nav-menu1{
+	background-color: #EBEBEB;
+	width:100%;
+	padding:5px;
+
+}
 .nav-slave{
 	background-image:url(../img/fa-nav-bg.png);
 	width:90%;
+	height:750px;
+	padding:20px;
+}
+.nav-slave1{
+	background-image:url(../img/fa-nav-bg.png);
+	width:100%;
 	height:750px;
 	padding:20px;
 }
@@ -199,12 +229,12 @@
 .media{
 	color:#858a92;
 	font-size: 14px;
-	font-weight:300px;	
+	font-weight:300;
 }
 ul.cp{
 	color:#424242;
 	font-size: 12px;
-	font-weight:300px;	
+	font-weight:300;	
 }
 .t_title, .profile_title {
 	font: 45px 'Gloria Hallelujah', cursive;
@@ -237,7 +267,7 @@ ul.cp{
 	width:100%; 
 	height:650px; 
 	overflow:scroll; 
-	border:0;"
+	border:0;
 }
 .form-control, .label-control, .btn{
  	margin: 3px 0 5px 0;

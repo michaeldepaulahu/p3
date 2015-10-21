@@ -17,7 +17,7 @@ Route::get('/', function () {
 });
 
 // routing to home page 
-Route::get('/home', function () {
+Route::get('/home/{start?}/{end?}', function () {
 	return view('home');
 });
 

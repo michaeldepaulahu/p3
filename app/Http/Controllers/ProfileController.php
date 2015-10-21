@@ -56,7 +56,7 @@ class ProfileController extends Controller
     {
         $this->autoCreateList();
     }
-
+	
     /**
     * Function Name : showProfile
     *

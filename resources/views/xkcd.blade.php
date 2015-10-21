@@ -17,7 +17,7 @@
     <span class="nav-title">Profile Maker</span><br>
     <a href="/chmod"><i id="nav-4" class="fa  fa-tags fa-3x"></i></a><br>
     <span class="nav-title">chmod cruncher</span><br>
-    <a href="/xkcd"><i id="nav-5" class="fa  fa-cogs fa-3x"></i></a><br>
+    <a href="/xkcd"><i id="nav-5" class="fa  fa-cogs fa-3x fa-active"></i></a><br>
     <span class="nav-title">xkcd password generator</span><br>
 @stop
 

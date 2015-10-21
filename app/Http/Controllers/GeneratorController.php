@@ -49,12 +49,22 @@ class GeneratorController extends Controller
         // takes the input and sends the paragraph(s) to the view
 		if ($request->has('text')) {
 		    $paragraph = $request->input('text');
+			$page = $request->input('page');
+			$align = $request->input('align');
 		    $text= $generator->getParagraphs($paragraph);
-		    return view('lorem')->with('paragraph', $text);
+		    return view('lorem')
+			->with('paragraph', $text)
+			->with('page', $page)
+			->with('align', $align);
 		} else {
 			// sets the default to show at view first entry
             $text= $generator->getParagraphs(1);
-            return view('lorem')->with('paragraph', $text);
+			$page = "Full Page";
+			$align = "Left"; 			
+            return view('lorem')
+			->with('paragraph', $text)
+			->with('page', $page)
+			->with('align', $align);
 		}
     }
 }

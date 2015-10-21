@@ -30,7 +30,7 @@
         <h5>LOADED COMPONENTS</h5>
             <div class="media text-left">
                 <ul class="cp">
-                  <li><a href="">Lorem Ipsum Generator</a></li>
+                  <li><a href="/home/57/90/">Lorem Ipsum Generator</a></li>
                   <li><a href="">Profile Maker</a></li>
                   <li><a href="">Chmod Cruncher</a></li>
                   <li><a href="">XKCD Password Generator</a></li>
@@ -46,7 +46,7 @@
             Speed-up the development of your website with the Best Friend Developer tools.
         </p>
         <p>
-            <img src="{{ asset('img/video.jpg') }}" width="620" height="290" alt=""/> 
+<iframe width="620" height="290" src="http://www.youtube.com/embed/SMIqux_jN6c?rel=0&start=258&end=272&autoplay=0" frameborder="0" allowfullscreen></iframe>
         </p>
     </div>  
 @stop

@@ -11,7 +11,7 @@
 @section('nav-fa')
     <a href="/home"><i id="nav-1" class="fa fa-bars fa-3x"></i></a><br>
     <span class="nav-title">Dahsboard</span><br>
-    <a href="/loremipsum"><i id="nav-2" class="fa fa-file-code-o fa-3x"></i></a><br>
+    <a href="/loremipsum"><i id="nav-2" class="fa fa-file-code-o fa-3x fa-active"></i></a><br>
     <span class="nav-title">Lorem Ipsum Generator</span><br>
     <a href="/profile"><i id="nav-3" class="fa fa-dot-circle-o fa-3x"></i></a><br>
     <span class="nav-title">Profile Maker</span><br>
@@ -37,7 +37,21 @@
                         </ul>
                     </div>
                 @endif
-                <input id="text" type="text" class="form-control" name="text" placeholder="number of paragraphs" value="{{ $_POST['text'] or 1 }}"><br>															        	
+                <input id="text" type="text" class="form-control" name="text" placeholder="number of paragraphs" value="{{ $_POST['text'] or 1 }}"><br>
+                <label>Page Layout:</label>
+                <select class="form-control" name="page">
+                    <option value="12">Full Page</option>
+                    <option value="6">Half Page</option>
+                    <option value="4">1/4 Page</option>
+                    <option value="2">1/8 Page</option>
+                </select>
+                <label>Alignment:</label>
+                <select class="form-control" name="align">
+                    <option value="text-left">Left</option>
+                    <option value="text-center">Center</option>
+                    <option value="text-right">Right</option>
+                    <option value="text-justify">Justify</option>
+                </select>                															        	
                 <button id="generate" type="submit" class="btn btn-default">Generate</button>
                 <button id="view" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View</button>
             </div>
@@ -70,6 +84,8 @@
 
     <div class="text-center slave-container"> 
         <p class="t_title">LOREM IPSUM</p>
+        <div class="row">
+            <div class="col-md-{{ $page }} {{ $align }}">        
         <?php 
             if(is_array($paragraph)){
                 echo implode('<p><p>', $paragraph); 
@@ -77,5 +93,7 @@
                 echo $paragraph;	
             }
         ?> 
+        </div>
+        </div>
     </div> 
 @stop

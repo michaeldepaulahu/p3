@@ -8,12 +8,12 @@
     thumb2-main2
 @stop
 
-@section('nav-fa')
+@section('nav-fa') 
     <a href="/home"><i id="nav-1" class="fa fa-bars fa-3x"></i></a><br>
     <span class="nav-title">Dahsboard</span><br>
     <a href="/loremipsum"><i id="nav-2" class="fa fa-file-code-o fa-3x"></i></a><br>
     <span class="nav-title">Lorem Ipsum Generator</span><br>
-    <a href="/profile"><i id="nav-3" class="fa fa-dot-circle-o fa-3x"></i></a><br>
+    <a href="/profile"><i id="nav-3" class="fa fa-dot-circle-o fa-3x fa-active"></i></a><br>
     <span class="nav-title">Profile Maker</span><br>
     <a href="/chmod"><i id="nav-4" class="fa  fa-tags fa-3x"></i></a><br>
     <span class="nav-title">chmod cruncher</span><br>
@@ -41,13 +41,13 @@
                             @endforeach
                         </ul>
                     </div>
-                @endif                
+                @endif                              
                 <input id="text" type="text" class="form-control" name="text" placeholder="number of users" value="{{ $_POST['text'] or 1 }}"><br>      	
                 <button id="generate" type="submit" class="btn btn-default">Generate</button><br>
                 <label class="label-control">2. Click below to view the formatted data:</label>                 
                 <button id="viewDeft" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View All</button>
                 <button id="viewJson" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View JSON</button>
-                <button id="viewCSV" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View CSV</button>
+                <button id="viewCSV" type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">View CSV</button>                             
             </div>
         </form>
     </div>
@@ -80,7 +80,7 @@
 @section('nav-slave')
     <div class="text-center slave-container"> 
         <img class="img-profile" src="{{ asset("img/" . $profile->track[0]['img']) }}" alt=""/><br>
-        <div class="profile_title">{{ $profile->track[0]['name'] }}</div> <br>    
+        <div class="profile_title">{{ $profile->track[0]['name'] }} </div> <br>    
         <div class="list-group text-left">
             <a class="list-group-item list-group-item-info text-center">
             About <strong>{{ $profile->track[0]['name'] }} </strong>

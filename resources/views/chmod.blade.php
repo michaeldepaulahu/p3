@@ -15,7 +15,7 @@
     <span class="nav-title">Lorem Ipsum Generator</span><br>
     <a href="/profile"><i id="nav-3" class="fa fa-dot-circle-o fa-3x"></i></a><br>
     <span class="nav-title">Profile Maker</span><br>
-    <a href="/chmod"><i id="nav-4" class="fa  fa-tags fa-3x"></i></a><br>
+    <a href="/chmod"><i id="nav-4" class="fa  fa-tags fa-3x fa-active"></i></a><br>
     <span class="nav-title">chmod cruncher</span><br>
     <a href="/xkcd"><i id="nav-5" class="fa  fa-cogs fa-3x"></i></a><br>
     <span class="nav-title">xkcd password generator</span><br>
@@ -24,10 +24,10 @@
 @section('nav-menu')  
     <div id="text_generator" class="">
         <h4>CHMOD CRUNCHER</h4>
-        <form action="/chmod" method="post">	
+        <form action="/chmod" method="post" id="chmod_form">	
                <div class="form-group text-left">
                 <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-                <label class="label-control">1. Enter Octal notation or select permissions below:</label>
+                <label class="label-control">1. Enter Octal notation</label>
                 @if (count($errors) > 0)
                     <div class="alert alert-danger">
                         <ul class="list-unstyled">
@@ -37,11 +37,11 @@
                         </ul>
                     </div>
                 @endif
-                <input id="text" type="text" class="form-control" name="text" placeholder="number of users" value="{{ '0000' }}"><br>   
+                <input id="text" type="text" class="form-control" name="text" placeholder="number of users" value="{{ '0000' }}"><br>                <label class="label-control">2. or select permissions below:</label>
                 <label class="label-control">User Permissions:</label>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" name="ur" value="4"> Read
+                        <input type="checkbox" id="ur" name="ur" value="4"> Read
            	        </label>   
                     <label>
                         <input type="checkbox" name="uw" value="2"> Write
