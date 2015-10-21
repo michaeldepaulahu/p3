@@ -84,7 +84,7 @@
 @stop
 
 @section('nav-slave')
-    <div class="text-center slave-container"> 
+    <div class="text-center slave-container nav-slave1"> 
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 main">
                 <div class="generate text-center">{{  empty($display) ? "XKCD Password Generator" : $display }}</div>
