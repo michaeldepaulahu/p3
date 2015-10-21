@@ -9,7 +9,7 @@
 @stop
 
 @section('nav-fa')
-    <a href="/home"><i id="nav-1" class="fa fa-bars fa-3x"></i></a><br>
+    <a href="/"><i id="nav-1" class="fa fa-bars fa-3x"></i></a><br>
     <span class="nav-title">Dahsboard</span><br>
     <a href="/loremipsum"><i id="nav-2" class="fa fa-file-code-o fa-3x"></i></a><br>
     <span class="nav-title">Lorem Ipsum Generator</span><br>
@@ -30,10 +30,10 @@
         <h5>LOADED COMPONENTS</h5>
             <div class="media text-left">
                 <ul class="cp">
-                  <li><a href="/home?start=57&end=90">Lorem Ipsum Generator</a></li>
-                  <li><a href="/home?start=108&end=188">Profile Maker</a></li>
-                  <li><a href="/home?start=189&end=257">Chmod Cruncher</a></li>
-                  <li><a href="/home?start=258&end=437">XKCD Password Generator</a></li>
+                  <li><a href="/?start=57&end=90">Lorem Ipsum Generator</a></li>
+                  <li><a href="/?start=108&end=188">Profile Maker</a></li>
+                  <li><a href="/?start=189&end=257">Chmod Cruncher</a></li>
+                  <li><a href="/?start=258&end=437">XKCD Password Generator</a></li>
                 </ul> 
             </div>
       </div>
