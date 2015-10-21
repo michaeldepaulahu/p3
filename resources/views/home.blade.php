@@ -45,11 +45,10 @@
         <p class="lead">
             Speed-up the development of your website with the Best Friend Developer tools.
         </p>
-        <p>
+        <br>
             <div class="video">
-                <iframe width="420" src="http://www.youtube.com/embed/yEDVJR_ptrE?rel=0&amp;start=<?php if (isset($_GET['start'])) echo $_GET['start']; else { $auto = 0; echo 0; } ?>&amp;end=<?php if (isset($_GET['end'])) echo  $_GET['end']; else { echo 437; } ?>&amp;autoplay={!! $auto or 1  !!}" frameborder="0" allowfullscreen></iframe> 
-            </div> 
-        </p>
+                <iframe width="420" src="http://www.youtube.com/embed/yEDVJR_ptrE?rel=0&amp;start=<?php if (isset($_GET['start'])) echo $_GET['start']; else { $auto = 0; echo 0; } ?>&amp;end=<?php if (isset($_GET['end'])) echo  $_GET['end']; else { echo 437; } ?>&amp;autoplay={!! $auto or 1  !!}" allowfullscreen></iframe> 
+            </div>
     </div>  
 @stop
 
