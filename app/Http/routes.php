@@ -12,7 +12,7 @@
 */
 
 // routing to home page 
-Route::get('/{start?}/{end?}', function () {
+Route::get('/', function () {
 	return view('home');
 });
 
@@ -29,3 +29,7 @@ Route::post('/chmod', 'ChmodController@postChmod');
 
 // Route for Loading XKCD integrated
 Route::any('/xkcd', 'XkcdApiController@showXkcd');
+
+Route::get('/{start?}/{end?}', function () {
+	return view('home');
+});

@@ -50,7 +50,7 @@
                                             </div>
                                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                               <ul class="nav navbar-nav">
-                                                <li class="active"><a href="/home">Dashboard <span class="sr-only">(current)</span></a></li>
+                                                <li class="active"><a href="/">Dashboard <span class="sr-only">(current)</span></a></li>
                                                 <li><a href="/loremipsum">Lorem Ipsum</a></li>
                                                 <li><a href="/profile">Profile Maker</a></li>
                                                 <li><a href="/chmod">CHMOD Cruncher</a></li>
