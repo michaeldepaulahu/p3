@@ -56,7 +56,10 @@
                 <button id="view" type="button" class="btn btn-default hidden-sm hidden-xs" data-toggle="modal" data-target="#myModal">View</button>
             </div>
         </form>
-    </div>
+    </div>  
+@stop
+
+@section('nav-slave')
     <!--Mobile View-->
     <div class="mobile-viewnav hidden-md hidden-lg">   
         <ul class="nav nav-tabs">
@@ -74,10 +77,7 @@
             </div>
         </div>                 
     </div> 
-    <!--End Mobile View-->    
-@stop
-
-@section('nav-slave')
+    <!--End Mobile View-->  
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">

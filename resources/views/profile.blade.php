@@ -51,34 +51,6 @@
             </div>
         </form>
     </div>
-    	<!--Mobile View-->
-            <div class="mobile-viewnav hidden-md hidden-lg">   
-                <ul class="nav nav-tabs">
-                  <li role="presentation" class="active view-nav"><a class="view-p-all">View ALL</a></li>
-                </ul>
-                <div class="tab">
-                  <div class="well ctrl-profile">
-                    <?php  $profile->display(); ?>
-                  </div>
-              	</div>
-                <ul class="nav nav-tabs">
-                  <li role="presentation" class="active view-nav"><a class="view-p-json">JSON</a></li>
-                </ul>
-                <div class="tab">
-                  <div class="well ctrljson-profile">
-                    <?php  $profile->displayJson(); ?>
-                  </div>
-              	</div>                
-                <ul class="nav nav-tabs">
-                  <li role="presentation" class="active view-nav"><a class="view-p-csv">View CSV</a></li>
-                </ul>
-                <div class="tab">
-                  <div class="well ctrlcsv-profile">
-                    <?php  $profile->displayCsv(); ?>
-                  </div>
-              	</div>                  
-            </div> 
-       <!--End Mobile View-->
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
@@ -106,6 +78,35 @@
 @stop
 
 @section('nav-slave')
+    <!--Mobile View-->
+        <div class="mobile-viewnav hidden-md hidden-lg">   
+            <ul class="nav nav-tabs">
+              <li role="presentation" class="active view-nav"><a class="view-p-all">View ALL</a></li>
+            </ul>
+            <div class="tab">
+              <div class="well ctrl-profile">
+                <?php  $profile->display(); ?>
+              </div>
+            </div>
+            <ul class="nav nav-tabs">
+              <li role="presentation" class="active view-nav"><a class="view-p-json">JSON</a></li>
+            </ul>
+            <div class="tab">
+              <div class="well ctrljson-profile">
+                <?php  $profile->displayJson(); ?>
+              </div>
+            </div>                
+            <ul class="nav nav-tabs">
+              <li role="presentation" class="active view-nav"><a class="view-p-csv">View CSV</a></li>
+            </ul>
+            <div class="tab">
+              <div class="well ctrlcsv-profile">
+                <?php  $profile->displayCsv(); ?>
+              </div>
+            </div>                  
+        </div> 
+   <!--End Mobile View-->
+       
     <div class="text-center slave-container hidden-xs hidden-md"> 
         <img class="img-profile" src="{{ asset("img/" . $profile->track[0]['img']) }}" alt=""/><br>
         <div class="profile_title">{{ $profile->track[0]['name'] }} </div> <br>    

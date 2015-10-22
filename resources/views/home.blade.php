@@ -46,9 +46,9 @@
             Speed-up the development of your website with the Best Friend Developer tools.
         </p>
         <br>
-            <div class="video">
-                <iframe width="420" src="http://www.youtube.com/embed/yEDVJR_ptrE?rel=0&amp;start=<?php if (isset($_GET['start'])) echo $_GET['start']; else { $auto = 0; echo 0; } ?>&amp;end=<?php if (isset($_GET['end'])) echo  $_GET['end']; else { echo 437; } ?>&amp;autoplay={!! $auto or 1  !!}" allowfullscreen></iframe> 
-            </div>
+        <div class="video">
+            <iframe width="420" src="http://www.youtube.com/embed/yEDVJR_ptrE?rel=0&amp;start=<?php if (isset($_GET['start'])) echo $_GET['start']; else { $auto = 0; echo 0; } ?>&amp;end=<?php if (isset($_GET['end'])) echo  $_GET['end']; else { echo 437; } ?>&amp;autoplay={!! $auto or 1  !!}" allowfullscreen></iframe> 
+        </div>
     </div>  
     <div id="nav-slave1" class="text-center hidden-md hidden-lg">
         <h1 class="intro">Boost Productivity and Build like a Pro.</h1>
