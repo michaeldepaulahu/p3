@@ -75,9 +75,19 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>             
         </div>
-
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p><strong>&copy; {{ date('Y') }} Dehashed.com</strong></p>
+                </div>
+            </div> 
+        </div>  
+    </div>
+   	<!--end footer--> 
     <script src="{{ asset('js/bootstrap.min.js') }} "></script>      
     </body>
 </html>

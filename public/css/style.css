@@ -20,6 +20,9 @@
 .nav-left, .nav-middle, .nav-right{
 	text-align:center;
 }
+.thumb2{
+  margin:auto 0;
+}
 }
 @media (min-width: 768px) {
 .nav-menu{
@@ -30,6 +33,9 @@
 .nav-slave{
 	width:100%;
 	background-image:url(../img/fa-nav-bg1.png);
+}
+.thumb2{
+  margin:auto 0;
 }
 }
 @media (min-width: 992px) {
@@ -49,6 +55,10 @@
 	height:750px;
 	text-align:center;
 }
+.thumb2{
+  height:607px;
+  margin:auto 0;
+}
 }
 @media (min-width: 1200px) {
 .nav-menu{
@@ -66,6 +76,10 @@
 .nav-left, .nav-middle, .nav-right{
 	height:750px;
 	text-align:center;
+}
+.thumb2{
+  height:607px;
+  margin:auto 0;
 }
 }
 /* Google Font - Gloria Hallelujah */
@@ -119,10 +133,7 @@
 .thumb1{
   height:100px;
  } 
-.thumb2{
-  height:607px;
-  margin:auto 0;
-}
+
 .thumb3{
   margin:0 40px 0 40px;
 }
@@ -245,6 +256,7 @@
 .intro{
 	color:#f5f5ed;
 	text-shadow: 2px 2px #090909;
+	padding-top:10px;
 }
 .lead{
 	color:#002544;
@@ -312,13 +324,13 @@ ul.cp{
 	font: 40px 'Gloria Hallelujah', cursive;
 }
 #viewDeft, #viewJson, #viewCSV{
-width:100%; 	
+    width:100%; 	
 }
 .ctrl-profile, .ctrljson-profile, .ctrlcsv-profile, .ctrl-lorem{
 	display:none;
 }
 .view-nav{
-width: 100%;	
+    width: 100%;	
 }
 .video {
 	position: relative;
@@ -336,4 +348,10 @@ width: 100%;
 }
 .mobile-viewnav{
 	background-color: #EBEBEB;
+	z-index:3;
+}
+.intro-img, .img-responsive{
+    margin:auto 0;
+	width:100%;
+	padding:10px;
 }

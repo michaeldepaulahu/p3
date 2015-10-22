@@ -55,8 +55,8 @@
         <p class="lead lead_mobile">
             Speed-up the development of your website with the Best Friend Developer tools.
         </p>
-        <p class="text-center">
-            <img class="img-responsive text-center" src="{{ asset('img/thumb.jpg') }}" alt="home intro">
-        </p>
+        <div class="intro-img">
+            <a href="https://www.youtube.com/watch?v=yEDVJR_ptrE"><img class="img-responsive text-center" src="{{ asset('img/thumb.jpg') }}" alt="home intro"></a><br>
+        </div>
     </div>  
 @stop
