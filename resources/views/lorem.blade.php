@@ -38,6 +38,7 @@
                     </div>
                 @endif
                 <input id="text" type="text" class="form-control" name="text" placeholder="number of paragraphs" value="{{ $_POST['text'] or 1 }}"><br>
+                <div class="xs-wrapper hidden-sm hidden-xs"> 
                 <label>Page Layout:</label>
                 <select class="form-control" name="page">
                     <option value="12">Full Page</option>
@@ -51,7 +52,8 @@
                     <option value="text-center">Center</option>
                     <option value="text-right">Right</option>
                     <option value="text-justify">Justify</option>
-                </select>                															        	
+                </select> 
+                </div>               															        	
                 <button id="generate" type="submit" class="btn btn-default">Generate</button>
                 <button id="view" type="button" class="btn btn-default hidden-sm hidden-xs" data-toggle="modal" data-target="#myModal">View</button>
             </div>

@@ -84,7 +84,8 @@
                     </label>   
                     <label>
               		    <input type="checkbox" name="sb" value="1"> Sticky bit
-                    </label>                                                            
+                    </label>   
+                    <div class="small text-warning">Special permissions require execute rights to work.</div>                                                            
                </div>                                                
                <button id="generate" type="submit" class="btn btn-default">Generate</button><br>
            </div>
