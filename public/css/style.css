@@ -23,6 +23,11 @@
 .thumb2{
   margin:auto 0;
 }
+#profile_container{
+	top:0px;
+	position:relative;
+	display:none;	
+}
 }
 @media (min-width: 768px) {
 .nav-menu{
@@ -36,6 +41,11 @@
 }
 .thumb2{
   margin:auto 0;
+}
+#profile_container{
+	top:0px;
+	position:relative;
+	display:none;
 }
 }
 @media (min-width: 992px) {
@@ -59,6 +69,11 @@
   height:607px;
   margin:auto 0;
 }
+#profile_container{
+	top:0px;
+	position:relative;
+	display:block;
+}
 }
 @media (min-width: 1200px) {
 .nav-menu{
@@ -80,6 +95,11 @@
 .thumb2{
   height:607px;
   margin:auto 0;
+}
+#profile_container{
+	top:0px;
+	position:relative;
+	display:block;	
 }
 }
 /* Google Font - Gloria Hallelujah */
@@ -244,8 +264,9 @@
 	color:#fefefe;
 	text-transform:uppercase;
 }
-.slave-container, .slave-container{
-	color:#FFFFFF;	
+.slave-container{
+	color:#FFFFFF;
+	height:745px;	
 }
 .slave-container{
 	font-size:12px;	
@@ -279,6 +300,7 @@ ul.cp{
 }
 .profile_title{
 	color:#7fffff;
+	height:85px;
 }
 .chmod_title{
 	color:#3E3E3E;
@@ -291,11 +313,21 @@ ul.cp{
 	background-color:transparent;	
 }
 .img-profile{
-	border:8px solid #FFFFFF;	
-	box-shadow: 1px 1px 1px #000000;
-	border-radius:100px;
+
+	box-shadow: 1px 1px 1px #000000;	
 	width:200px;
 	height:200px;
+	border-radius:100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;  	
+}
+.img-profile-ct{
+   display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -khtml-border-radius: 50%;
+    border: 8px solid #fff;	
 }
 .field{
 	color:#10225A;
@@ -354,4 +386,7 @@ ul.cp{
     margin:auto 0;
 	width:100%;
 	padding:10px;
+}
+.fa-arrow-circle-o-left,.fa-arrow-circle-o-right{
+	margin:0 10px 0 10px;
 }

@@ -55,12 +55,5 @@
 
 		// execute special delimiters
 		run_symbols();
-
-		// animation 
-		document.getElementById('anim1').innerHTML = "0.1011010010100101"; 
-		
-		setInterval(function(){ 
-			var x = Math.random();
-			document.getElementById('anim1').innerHTML = x; 
-		}, 500);		 	
+		 	
 	});

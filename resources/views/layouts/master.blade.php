@@ -13,8 +13,9 @@
 <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}" type="text/css">
 <!--JS-->
 <script src="{{ asset('js/jquery-1.11.3.min.js') }} "></script>
-<script src="{{ asset('js/custom.js') }} "></script>
 <script src="{{ asset('js/p2-custom.js') }} "></script>
+<script src="{{ asset('js/custom.js') }} "></script>
+
 </head>
     <body>
         <div class="container-fluid">

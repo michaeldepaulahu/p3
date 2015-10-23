@@ -20,6 +20,8 @@ Demo can be viewed at the youtube link below or at the home page of the site its
 
 ## Details for teaching team
 
+For detailed explanation of web application, please see [Blueprint](https://github.com/michaeldepaulahu/p3/blob/master/blueprint.pdf)
+
 ### Project file structure:
 
 #### Controllers:
@@ -56,6 +58,9 @@ Demo can be viewed at the youtube link below or at the home page of the site its
 
 ## Outside dictionary 
 * PaulNoll: https://www.paulnoll.com/
+
+## Vendor packages
+* badcow/lorem-ipsum
 
 ## Notes 
 XKCD CLass integration is under app/lib directory. 

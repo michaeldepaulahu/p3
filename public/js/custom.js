@@ -65,6 +65,28 @@ $(document).ready(function(){
     slideItem(".view-p-json",".ctrljson-profile");
     slideItem(".view-p-csv",".ctrlcsv-profile");
     slideItem(".view-i-all",".ctrl-lorem");
+	
+    // switchProfiles
+    // allows the user to traverse the generated list
+    // so visual preview of the generate profile(s) is/are possible
+    var textbox = document.getElementById('text').value;
+    var x = parseInt($('#profile_container').css('height'));	
+    var z = parseInt($('.slave-container').css('height')) + 300;	
+    var y = 0;
+
+    $(".fa-arrow-circle-o-right").click(function() {
+        if (y > (-x+z)) {
+            y=y-z;
+            $("#profile_container").animate({top: y},{duration: 300,easing: 'swing'});
+        }
+    }); 
+
+    $(".fa-arrow-circle-o-left").click(function() {
+        if (y < 0) {
+            y=y+z;
+            $("#profile_container").animate({top: y},{duration: 300,easing: 'swing'});
+        }
+    });		
 
     // input check
     getID();
@@ -100,5 +122,6 @@ $(document).ready(function(){
     replaceClass(
         "#viewCSV", "#copy", "#copy1","#copy2", 
         "#modal-body", "#modal-body1", "#modal-body2"
-    );				
+    );	
+				
 });

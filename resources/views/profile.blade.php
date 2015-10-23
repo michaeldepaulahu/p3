@@ -29,7 +29,7 @@
     @endif
     <div id="text_generator" class="">
         <h4>PROFILE MAKER</h4>
-        <form action="/profile" method="post">	
+        <form action="/profile" method="post" id="form_profile">	
             <div class="form-group text-left">
                 <input type='hidden' name='_token' value='{{ csrf_token() }}'>
                 <label class="label-control">1. Enter the number of user profiles to generate and click the Generate button:<br> (Max 30)</label>
@@ -44,7 +44,8 @@
                 @endif                              
                 <input id="text" type="text" class="form-control" name="text" placeholder="number of users" value="{{ $_POST['text'] or 1 }}"><br>      	
                 <button id="generate" type="submit" class="btn btn-default">Generate</button><br>
-                <label class="label-control">2. Click below to view the formatted data:</label>                 
+                <label class="label-control hidden-xs hidden-sm">- Use arrows <i class="fa fa-arrow-circle-o-left"></i><i class="fa fa-arrow-circle-o-right"></i> to view generated profiles or</label> 
+                <label class="label-control">- Click below to view the formatted data:</label>                 
                 <button id="viewDeft" type="button" class="btn btn-default hidden-sm hidden-xs" data-toggle="modal" data-target="#myModal">View All</button>
                 <button id="viewJson" type="button" class="btn btn-default hidden-sm hidden-xs" data-toggle="modal" data-target="#myModal">View JSON</button>
                 <button id="viewCSV" type="button" class="btn btn-default hidden-sm hidden-xs" data-toggle="modal" data-target="#myModal">View CSV</button>                             
@@ -105,23 +106,27 @@
               </div>
             </div>                  
         </div> 
-   <!--End Mobile View-->
-       
-    <div class="text-center slave-container hidden-xs hidden-md"> 
-        <img class="img-profile" src="{{ asset("img/" . $profile->track[0]['img']) }}" alt=""/><br>
-        <div class="profile_title">{{ $profile->track[0]['name'] }} </div> <br>    
-        <div class="list-group text-left">
-            <a class="list-group-item list-group-item-info text-center">
-            About <strong>{{ $profile->track[0]['name'] }} </strong>
-            </a>
-            <a  class="list-group-item"><strong class="field">ID: </strong>{{ $profile->track[0]['id'] }}</a>
-            <a  class="list-group-item"><strong class="field">Email: </strong>{{ $profile->track[0]['email'] }}</a>    
-            <a  class="list-group-item"><strong class="field">Birthday: </strong>{{ $profile->track[0]['birthday'] }}</a>
-            <a  class="list-group-item"><strong class="field">Username: </strong>{{ $profile->track[0]['user'] }}</a>
-            <a  class="list-group-item"><strong class="field">Password: </strong>{{ $profile->track[0]['password'] }}</a>
-            <a  class="list-group-item"><strong class="field">Salt: </strong>{{ $profile->track[0]['salt'] }}</a>     
-            <a  class="list-group-item"><strong class="field">Hash: </strong>{{ $profile->track[0]['hash'] }}</a>
-            <a  class="list-group-item"><strong class="field">Hash: </strong>{{ $profile->track[0]['img'] }}</a>
-    	</div> 	
-    </div> 
+    <!--End Mobile View-->
+    <div id="profile_container">
+        <?php foreach($profile->track as $value) { ?>
+            <div class="text-center slave-container hidden-xs hidden-sm"> 
+                <a><i class="fa fa-arrow-circle-o-left fa-3x"></i></a><div class="img-profile-ct"> <img class="img-profile" src="{{ asset("img/" .  $value['img']) }}" alt=""/></div> <a><i class="fa fa-arrow-circle-o-right fa-3x"></i></a><br>
+                <div class="profile_title">{{ $value['name'] }} </div> <br>    
+                <div class="list-group text-left">
+                    <a class="list-group-item list-group-item-info text-center">
+                    About <strong>{{ $value['name'] }} </strong>
+                    </a>
+                    <a  class="list-group-item"><strong class="field">ID: </strong>{{ $value['id'] }}</a>
+                    <a  class="list-group-item"><strong class="field">Email: </strong>{{ $value['email'] }}</a>    
+                    <a  class="list-group-item"><strong class="field">Birthday: </strong>{{ $value['birthday'] }}</a>
+                    <a  class="list-group-item"><strong class="field">Username: </strong>{{ $value['user'] }}</a>
+                    <a  class="list-group-item"><strong class="field">Password: </strong>{{ $value['password'] }}</a>
+                    <a  class="list-group-item"><strong class="field">Salt: </strong>{{ $value['salt'] }}</a>     
+                    <a  class="list-group-item"><strong class="field">Hash: </strong>{{ $value['hash'] }}</a>
+                    <a  class="list-group-item"><strong class="field">Hash: </strong>{{ $value['img'] }}</a>
+            	</div> 	
+            </div> 
+            <div style="padding-bottom:300px;"></div>
+        <?php } ?>
+    </div>
 @stop
